@@ -1,5 +1,6 @@
 /* === External Modules === */
 const express = require('express');
+require('./config/db.connection');
 
 // module instance
 const app = express();
