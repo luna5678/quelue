@@ -1,0 +1,26 @@
+{
+  "name": "project-1",
+  "version": "1.0.0",
+  "description": "Quelue streaming service app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luna5678/quelue.git"
+  },
+  "author": "Lonna Lu, Courtney Kakebeen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luna5678/quelue/issues"
+  },
+  "homepage": "https://github.com/Luna5678/quelue#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.5"
+  }
+}
