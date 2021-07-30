@@ -23,14 +23,14 @@ const UserSchema = new mongoose.Schema(
             ref: 'Show',
             default: []
         },
-        showLikes: {
-            type: [mongoose.Shows.ObjectId],
+        showLikes: [{
+            type: mongoose.Shows.ObjectId,
             ref: 'Show',
-        },
-        episodeLikes: {
-            type: [mongoose.Episodes.ObjectId],
+        }],
+        episodeLikes: [{
+            type: mongoose.Episodes.ObjectId,
             ref: 'Episode'
-        }     
+        }]     
     },
     {
         timestamps: true
