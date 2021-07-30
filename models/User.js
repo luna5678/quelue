@@ -18,8 +18,9 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: [true, 'password required']
         },
-        queue: {
-            type: [String],
+        showQueue: {
+            type: [mongoose.Shows.ObjectId],
+            ref: 'Show',
             default: []
         },
         showLikes: {
