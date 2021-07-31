@@ -9,7 +9,7 @@ const app = express();
 const PORT = 4000;
 
 /* === Internal Modules === */
-const controllers = require('./controllers/user_controllers');
+const controllers = require('./controllers/show_controllers'); //NEED TO CREATE INDEX CONTROLLER SO WE CAN USE ALL
 
 /* === Routes === */
 app.use('/', controllers);
