@@ -9,10 +9,11 @@ const app = express();
 const PORT = 4000;
 
 /* === Internal Modules === */
-const controllers = require('./controllers/show_controllers'); //NEED TO CREATE INDEX CONTROLLER SO WE CAN USE ALL
+const controllers = require('./controllers'); 
 
 /* === Routes === */
-app.use('/', controllers);
+app.use('/', controllers.user);
+app.use('/shows', controllers.show);
 
 
 app.listen(PORT, () => console.log(`Ready to quelue, listening for client requests on port:`, PORT));

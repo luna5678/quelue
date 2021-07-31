@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Show = require('../models/Show');
 
-router.get('/shows', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         const allShows = await Show.find({});
         const context = {
