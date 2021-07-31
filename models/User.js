@@ -18,19 +18,19 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: [true, 'password required']
         },
-        showQueue: {
-            type: [mongoose.Shows.ObjectId],
-            ref: 'Show',
-            default: []
-        },
-        showLikes: [{
-            type: mongoose.Shows.ObjectId,
-            ref: 'Show',
-        }],
-        episodeLikes: [{
-            type: mongoose.Episodes.ObjectId,
-            ref: 'Episode'
-        }]     
+        // showQueue: {
+        //     type: [mongoose.Shows.ObjectId],
+        //     ref: 'Show',
+        //     default: []
+        // },
+        // showLikes: [{
+        //     type: mongoose.Shows.ObjectId,
+        //     ref: 'Show',
+        // }],
+        // episodeLikes: [{
+        //     type: mongoose.Episodes.ObjectId,
+        //     ref: 'Episode'
+        // }]     
     },
     {
         timestamps: true
