@@ -11,6 +11,9 @@ const PORT = 4000;
 /* === Internal Modules === */
 const controllers = require('./controllers'); 
 
+/* === App Config === */
+app.set("view engine", "ejs");
+
 /* === Middleware === */
 app.use(express.urlencoded({
     extended: true }));
