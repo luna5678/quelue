@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/User');
+const { User, Show } = require('../models');
 /* === Routes === */
 
 // index 
@@ -21,12 +21,16 @@ router.get('/register', (req, res) => {
 //     res.redirect('/');
 // });
 
-// show
+// show - displays User's homepage with queue and likes 
 router.get('/:id', async (req, res, next) => {
     try {
         const foundUser = await User.findById(req.params.id);
+        const userShows = await Show.find({
+            user: req.params.id
+        });
         const context = {
             user: foundUser,
+            show: userShows,
         };
         return res.send(context);
     } catch (error) {
