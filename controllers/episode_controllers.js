@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
         const context = {
             episodes: allEpisodes,
         };
-        return res.send(context);
+        return res.render('episodes/index.ejs', context);
     } catch (error) {
         if (error) console.log(error);
         req.error = error;
