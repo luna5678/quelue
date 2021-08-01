@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
         const context = {
             shows: allShows,
         };
-        return res.send(context);
+        return res.render('shows/index', context);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -26,7 +26,7 @@ router.get('/:id', async (req, res, next) => {
         const context = {
             show: foundShow,
         };
-        return res.send(context);
+        return res.render('shows/show', context);
     } catch (error) {
         console.log(error);
         req.error = error;
