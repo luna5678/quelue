@@ -15,7 +15,7 @@ const EpisodeSchema = new mongoose.Schema(
             default: 0
         },
         parentShow: {
-            type: mongoose.Shows.ObjectId,
+            type: mongoose.Types.ObjectId,
             require: true
         },
         image: {
