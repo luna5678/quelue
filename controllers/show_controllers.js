@@ -2,7 +2,7 @@ const express = require('express');
 const { nextTick } = require('process');
 const router = express.Router();
 
-const Show = require('../models/Show');
+const Show = require('../models');
 
 // index - for page with full Shows list
 router.get('/', async (req, res, next) => {
