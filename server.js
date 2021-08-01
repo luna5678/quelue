@@ -11,6 +11,10 @@ const PORT = 4000;
 /* === Internal Modules === */
 const controllers = require('./controllers'); 
 
+/* === Middleware === */
+app.use(express.urlencoded({
+    extended: true }));
+
 /* === Routes === */
 app.use('/', controllers.user);
 app.use('/shows', controllers.show);
