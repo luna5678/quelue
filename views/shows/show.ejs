@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include({ page: shows.name }) %> 
-    <title>Show Page</title>
-</head>
+
+<%- include('../partials/head/_head', { page: show.name }) %> 
+    
 <body>
     <main>
         <div>
-            <img src="<%= shows.image %>" alt="" />
+            <img src="<%= show.image %>" alt="" />
         </div>
     </main>
 </body>
