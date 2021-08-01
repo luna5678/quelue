@@ -25,12 +25,14 @@ router.get('/register', (req, res) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const foundUser = await User.findById(req.params.id);
-        const userShows = await Show.find({
-            user: req.params.id
-        });
+
+        // TODO The code below that is commented out is an attempt to display the shows listed in the showQueue property of the User - need to revisit syntax
+
+        // const userShows = await Show.findById(req.params.id);
+        // console.log(req.params.id);
         const context = {
             user: foundUser,
-            show: userShows,
+            // show: userShows,
         };
         return res.send(context);
     } catch (error) {
