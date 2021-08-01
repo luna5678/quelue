@@ -4,18 +4,17 @@ const router = express.Router();
 
 const Show = require('../models/Show');
 
-router.get('/', async (req, res) => {
-    try{
+router.get('/shows', async (req, res, next) => {
+    try {
         const allShows = await Show.find({});
         const context = {
             shows: allShows,
-        };
-        res.send('data received'); //NEED TO TEST SENDING SHOWS SEED DB
+    };
+        res.send('data received', context); //NEED TO TEST SENDING SHOWS SEED DB
     } catch (error) {
-        if(error) {
-            console.log(error);
-            return next();
-        }
+        console.log(error);
+        req.error = error;
+        return next();
     }
 });
 
