@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
         const context = {
             shows: allShows,
         };
-        return res.send(context); //NEED TO TEST SENDING SHOWS SEED DB
+        return res.send(context);
     } catch (error) {
         console.log(error);
         req.error = error;
