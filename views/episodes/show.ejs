@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Episode' }) %>
+
+    <body>
+        <main>
+            <div>
+                <h2><%=episode.name%></h2>
+                <img src="<%= episode.image %>" alt="" />
+                <p><%=episode.description%></p>
+                <p>Runtime: <%=episode.runtime%> minutes</p>
+            </div>
+        </main>
+    </body>
+
+</html>

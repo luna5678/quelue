@@ -3,19 +3,35 @@ const router = express.Router();
 
 const {Episode} = require('../models');
 
-router.get('/', async (req, res, next) => {
+// INDEX PAGE IF NEEDED
+// router.get('/', async (req, res, next) => {
+//     try {
+//         const allEpisodes = await Episode.find({});
+//         const context = {
+//             episodes: allEpisodes,
+//         };
+//         return res.render('episodes/index.ejs', context);
+//     } catch (error) {
+//         if (error) console.log(error);
+//         req.error = error;
+//         return next();
+//     }    
+// });
+
+//SHOW PAGE
+router.get('/:id', async (req, res, next) => {
     try {
-        const allEpisodes = await Episode.find({});
+        const foundEpisode = await Episode.findById(req.params.id);
         const context = {
-            episodes: allEpisodes,
+            episode: foundEpisode,
         };
-        return res.render('episodes/index.ejs', context);
+        return res.render('episodes/show.ejs', context);
     } catch (error) {
-        if (error) console.log(error);
+        console.log(error);
         req.error = error;
         return next();
-    }    
-});
+    }
+})
 
 
 module.exports = router;
