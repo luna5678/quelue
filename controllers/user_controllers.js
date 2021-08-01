@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const User = require('../models/User');
+const { User, Show } = require('../models');
 /* === Routes === */
 
 // index 
@@ -21,9 +21,25 @@ router.get('/register', (req, res) => {
 //     res.redirect('/');
 // });
 
-// show
-router.get('/user/:id', (req, res) => {
-    return res.send('Welcome to the user page?');
+// show - displays User's homepage with queue and likes 
+router.get('/:id', async (req, res, next) => {
+    try {
+        const foundUser = await User.findById(req.params.id);
+
+        // TODO The code below that is commented out is an attempt to display the shows listed in the showQueue property of the User - need to revisit syntax
+
+        // const userShows = await Show.findById(req.params.id);
+        // console.log(req.params.id);
+        const context = {
+            user: foundUser,
+            // show: userShows,
+        };
+        return res.send(context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 
