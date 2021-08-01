@@ -14,10 +14,11 @@ const EpisodeSchema = new mongoose.Schema(
             type: Number,
             default: 0
         },
-        parentShow: {
-            type: mongoose.Types.ObjectId,
-            require: true
-        },
+        // parentShow: {
+        //     type: mongoose.Types.ObjectId,
+        //     ref: 'Show',
+        //     require: true
+        // },
         image: {
             type: String,
             required: true
