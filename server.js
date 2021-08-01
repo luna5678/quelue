@@ -21,6 +21,7 @@ app.use(express.urlencoded({
 /* === Routes === */
 app.use('/user', controllers.user);
 app.use('/shows', controllers.show);
+app.use('/episodes', controllers.episode);
 
 
 app.listen(PORT, () => console.log(`Ready to quelue, listening for client requests on port:`, PORT));
