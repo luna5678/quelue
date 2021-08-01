@@ -22,8 +22,18 @@ router.get('/register', (req, res) => {
 // });
 
 // show
-router.get('/user/:id', (req, res) => {
-    return res.send('Welcome to the user page?');
+router.get('/:id', async (req, res, next) => {
+    try {
+        const foundUser = await User.findById(req.params.id);
+        const context = {
+            user: foundUser,
+        };
+        return res.send(context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 
