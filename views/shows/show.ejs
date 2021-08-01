@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= req.params.name %> </title>
+    <%- include({ page: shows.name }) %> 
+    <title>Show Page</title>
 </head>
 <body>
     <main>
         <div>
-            <img src="<%= req.params.image %>" alt="" />
+            <img src="<%= shows.image %>" alt="" />
         </div>
     </main>
 </body>
