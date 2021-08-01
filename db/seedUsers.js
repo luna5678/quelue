@@ -10,14 +10,14 @@ const seed = async () => {
                     dob: new Date(1988, 2, 2),
                     email: 'courtney.kakebeen@gmail.com',
                     password: 'thisWorks',
-                    showQueue: ['6105fb15c4fbeae63a5aa98b']
+                    // showQueue: ['6105fb15c4fbeae63a5aa98b']
                 },
                 {
                     username: 'Luna5678',
                     dob: new Date(2021, 0, 1),
                     email: 'thisislonna@gmail.com',
                     password: 'thisAlsoWorks',
-                    showQueue: ['6105fb15c4fbeae63a5aa98c']
+                    // showQueue: ['6105fb15c4fbeae63a5aa98c']
                 },
             ]);
             console.log(newUsers);
