@@ -12,7 +12,7 @@ const PORT = 4000;
 const controllers = require('./controllers'); 
 
 /* === Routes === */
-app.use('/', controllers.user);
+app.use('/user', controllers.user);
 app.use('/shows', controllers.show);
 
 
