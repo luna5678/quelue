@@ -5,7 +5,7 @@ const router = express.Router();
 const { Show } = require('../models');
 
 // index - for page with full Shows list
-router.get('/index', async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         const allShows = await Show.find({});
         const context = {
