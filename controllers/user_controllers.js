@@ -5,13 +5,13 @@ const User = require('../models/User');
 /* === Routes === */
 
 // index 
-router.get('/', (req, res, next) => {
-    return res.send('Welcome to the index');
-});
+// router.get('/user', (req, res, next) => {
+//     return res.send('Welcome to the index');
+// });
 
 // new 
-router.get('/new', (req, res) => {
-    return res.send('Add a new thing');
+router.get('/register', (req, res) => {
+    return res.send('Registration page');
 });
 
 // create -- need to set up schema and ejs page to test
@@ -22,7 +22,9 @@ router.get('/new', (req, res) => {
 // });
 
 // show
-
+router.get('/user/:id', (req, res) => {
+    return res.send('Welcome to the user page?');
+});
 
 
 module.exports = router;
