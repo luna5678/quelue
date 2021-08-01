@@ -1,5 +1,5 @@
-const Show = require('../models/Show');
-require('../config/db.connection.js');
+const { Show } = require('../models');
+
 
 Show.deleteMany({}, function (error, deletedShows) {
     if (error) console.log(error);
