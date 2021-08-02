@@ -24,17 +24,11 @@ router.get('/register', (req, res) => {
 // show - displays User's homepage with queue and likes 
 router.get('/:id', async (req, res, next) => {
     try {
-        const foundUser = await User.findById(req.params.id);
-
-        // TODO The code below that is commented out is an attempt to display the shows listed in the showQueue property of the User - need to revisit syntax
-
-        // const userShows = await Show.findById(req.params.id);
-        // console.log(req.params.id);
+        const foundUser = await User.findOne({ _id: req.params.id }).populate('userQueue');
         const context = {
             user: foundUser,
-            // show: userShows,
         };
-        return res.send(context);
+        return res.render('users/show.ejs', context);
     } catch (error) {
         console.log(error);
         req.error = error;
