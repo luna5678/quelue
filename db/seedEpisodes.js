@@ -25,7 +25,7 @@ Episode.deleteMany({}, function(error, deletedEpisodes) {
                 name: 'Human Flesh',
                 runtime: 30,
                 likes: 0,
-                parentShow: '6107167a939aaa0f7864f0b6',
+                parentShow: '61079724934cbd28d3724cbc',
                 image: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Human_Flesh_-_Bob%27s_Burgers_promo.png/275px-Human_Flesh_-_Bob%27s_Burgers_promo.png',
                 description: `A health inspector visits the burger joint after Louise starts a rumor at school during show-and-tell in the opener of the animated sitcom series following a restaurateur and his quirky family.`,
             }
