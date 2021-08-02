@@ -9,7 +9,7 @@ Episode.deleteMany({}, function(error, deletedEpisodes) {
                 name: 'The Fresh Prince Project',
                 runtime: 22,
                 likes: 0,
-                // parentShow: 'Fresh Prince Show ID from DB',
+                parentShow: '6107167a939aaa0f7864f0b4',
                 image: 'https://m.media-amazon.com/images/M/MV5BMzI1OTUzMjkxM15BMl5BanBnXkFtZTgwNjA4MDIyMjE@._V1_.jpg',
                 description: 'Will Smith is transplanted from the tough streets of Philadelphia to live with his wealthy relatives in Bel Air, causing everyone to make major adjustments in their way of living and in their their way of thinking.'
             },
@@ -17,7 +17,7 @@ Episode.deleteMany({}, function(error, deletedEpisodes) {
                 name: 'Pilot',
                 runtime: 23,
                 likes: 0,
-                // parentShow: 'Modern Family Show ID from DB',
+                parentShow: '6107167a939aaa0f7864f0b5',
                 image: 'https://www.pogdesign.co.uk/cat/imgs/episodes/Modern-Family/Modern-Family-S01E01-da5b17414ddc34e315e306c80399d568-full.jpg',
                 description: 'Jay has grown children, grandchildren and a gorgeous young wife, who has a preteen son of her own; all together they must bridge generational, cultural and social gaps.'
             },
