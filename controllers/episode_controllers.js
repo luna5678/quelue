@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {Episode} = require('../models');
+const {Episode, Show} = require('../models');
 
 // INDEX PAGE IF NEEDED
 // router.get('/', async (req, res, next) => {
@@ -21,7 +21,7 @@ const {Episode} = require('../models');
 //SHOW PAGE
 router.get('/:id', async (req, res, next) => {
     try {
-        const foundEpisode = await Episode.findById(req.params.id);
+        const foundEpisode = await Episode.findOne({_id: req.params.id}).populate('parentShow');
         const context = {
             episode: foundEpisode,
         };
@@ -32,6 +32,5 @@ router.get('/:id', async (req, res, next) => {
         return next();
     }
 })
-
 
 module.exports = router;

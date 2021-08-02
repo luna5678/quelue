@@ -5,6 +5,7 @@
     <body>
         <main>
             <div>
+                <a href="/shows/<%=episode.parentShow._id%>"><h1>The Show Name is: <%=episode.parentShow.name%></h1></a>
                 <h2><%=episode.name%></h2>
                 <img src="<%= episode.image %>" alt="" />
                 <p><%=episode.description%></p>
