@@ -19,7 +19,7 @@ const controllers = require('./controllers');
 app.set("view engine", "ejs");
 
 // session controller
-app.use(
+/* app.use(
     session({
         store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI }),
@@ -30,9 +30,14 @@ app.use(
             maxAge: 1000 * 60 * 60 * 24 * 7* 2,
         },
     })
-);
+); */
+
+
 
 /* === Middleware === */
+
+app.use(express.static("public"));
+
 app.use(express.urlencoded({
     extended: true }));
 

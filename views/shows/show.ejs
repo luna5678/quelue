@@ -6,7 +6,16 @@
 <body>
     <main>
         <div>
+            <a href="/shows/<%= show._id %>"><h1></h1></a>
             <img src="<%= show.image %>" alt="" />
+        </div>
+        <div>
+            <% for (let idx=0; idx < episodes.length; idx++) { %>
+                <% const episode=episodes[idx] %>
+                    <img class="thumbnail" src="<%= episode.image %>" alt="" />
+                    <h2><%=episode.name%></h2>
+                    <p><%=episode.description%></p>
+                    <% } %>
         </div>
     </main>
 </body>
