@@ -22,13 +22,15 @@ router.get('/:id', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        // grab the id of the series and then .populate('showqueue')
-        // push the id to the showQueue id array
-        const 
-    } catch (error) {
 
+        // grab the id of the series and then .populate('showqueue')
+        // push the id to the showQueue id array 
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
     }
-})
+});
 
 
 // index 
