@@ -21,7 +21,7 @@ const {Episode, Show} = require('../models');
 //SHOW PAGE
 router.get('/:id', async (req, res, next) => {
     try {
-        const foundEpisode = await Episode.findOne({_id: req.params.id}).populate('parentShow');
+        const foundEpisode = await Episode.findById(req.params.id).populate('parentShow');
         const context = {
             episode: foundEpisode,
         };
