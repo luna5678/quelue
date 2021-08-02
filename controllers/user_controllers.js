@@ -9,10 +9,7 @@ const { User, Show } = require('../models');
 //     return res.send('Welcome to the index');
 // });
 
-// new 
-router.get('/register', (req, res) => {
-    return res.send('Registration page');
-});
+// registration is in auth controllers
 
 // create -- need to set up schema and ejs page to test
 // router.post('/', (req, res, next) => {

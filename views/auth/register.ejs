@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Register' }) %>
+
+    <body>
+        <main>
+            <div id="registration-box">
+                <h3>Watch your favorite TV shows for free</h3>
+                <h3>Register for an account today!</h3>
+                <div class="registration-container">
+                    <form action="/users">
+                        <div>
+                            <label for="username">username</label>
+                            <input type="text" id="username" />
+                        </div>
+                        <div>
+                            <label for="username">email</label>
+                            <input type="email" id="email" />
+                        </div>
+                        <div>
+                            <label for="username">birthdate</label>
+                            <input type="text" id="dob" placeholder="YYYY, MM, DD" />
+                        </div>
+                        <div>
+                            <label for="username">password</label>
+                            <input type="password" id="password" />
+                        </div>
+                        <div>
+                            <label for="username">confirm password</label>
+                            <input type="password" id="password" />
+                        </div>
+                        <!-- ADD BUTTON TO SUBMIT AFTER AUTH IS SET UP -->
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+
+</html>

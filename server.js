@@ -19,6 +19,7 @@ app.use(express.urlencoded({
     extended: true }));
 
 /* === Routes === */
+app.use('/', controllers.auth);
 app.use('/users', controllers.user);
 app.use('/shows', controllers.show);
 app.use('/episodes', controllers.episode);
