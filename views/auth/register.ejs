@@ -7,8 +7,8 @@
             <div id="registration-box">
                 <h3>Watch your favorite TV shows for free</h3>
                 <h3>Register for an account today!</h3>
-                <div class="registration-container">
-                    <form action="/users">
+                <div class="registration-form">
+                    <form action="/register" method="POST">
                         <div>
                             <label for="username">username</label>
                             <input type="text" id="username" />
@@ -32,6 +32,11 @@
                         <!-- ADD BUTTON TO SUBMIT AFTER AUTH IS SET UP -->
                     </form>
                 </div>
+
+                <div>
+                    <a href="/login">Already have an account? Log in.</a>
+                </div>
+
             </div>
         </main>
     </body>

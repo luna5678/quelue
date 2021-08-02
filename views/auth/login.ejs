@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Login' }) %>
+
+    <body>
+        <main>
+            <div id="login-box">
+                <h3>Watch your favorite TV shows</h3>
+                <h3>Login to start the quelue!</h3>
+                <div class="login-form">
+                    <form action="/login" method="POST">
+                        <div>
+                            <label for="username">username</label>
+                            <input type="text" id="username" />
+                        </div>
+                            <label for="username">password</label>
+                            <input type="password" id="password" />
+                        </div>
+                        <!-- ADD BUTTON TO SUBMIT AFTER AUTH IS SET UP -->
+                    </form>
+                </div>
+
+                <div>
+                    <a href="/register">Don't have an account? Register for free.</a>
+                </div>
+
+            </div>
+        </main>
+    </body>
+
+</html>
