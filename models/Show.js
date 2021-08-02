@@ -18,10 +18,6 @@ const ShowSchema = new mongoose.Schema(
             type: String,
             required: true
         },
-        userQueue: {
-            type: mongoose.Types.ObjectId,
-            ref: 'User',
-        }
     },
     {
         timestamps: true
