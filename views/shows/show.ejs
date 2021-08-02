@@ -12,7 +12,7 @@
         <div>
             <% for (let idx=0; idx < episodes.length; idx++) { %>
                 <% const episode=episodes[idx] %>
-                    <img src="<%= episode.image %>" alt="" />
+                    <img class="thumbnail" src="<%= episode.image %>" alt="" />
                     <h2><%=episode.name%></h2>
                     <p><%=episode.description%></p>
                     <% } %>
