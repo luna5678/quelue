@@ -17,6 +17,10 @@ const ShowSchema = new mongoose.Schema(
         description: {
             type: String,
             required: true
+        },
+        userQueue: {
+            type: mongoose.Types.ObjectId,
+            ref: 'User',
         }
     },
     {
