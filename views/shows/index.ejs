@@ -5,7 +5,10 @@
     <main>
         <div>
             <% for (let idx = 0; idx < shows.length; idx++) { %> <% const show = shows[idx] %>
-                <img src="<%= show.image %>" alt="" />
+                <img class="thumbnail" src="<%= show.image %>" alt="" />
+                <a href="/shows/<%=show.id%>">
+                    <p><%=show.name%></p>
+                </a>
             <% } %> 
         </div>
     </main>
