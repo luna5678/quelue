@@ -24,9 +24,9 @@ router.get('/register', (req, res) => {
 // show - displays User's homepage with queue and likes 
 router.get('/:id', async (req, res, next) => {
     try {
-        const foundUser = await User.findOne({ _id: req.params.id }).populate('userQueue');
+        const foundShow = await User.findOne({ _id: req.params.id }).populate('showQueue');
         const context = {
-            user: foundUser,
+            user: foundShow,
         };
         return res.render('users/show.ejs', context);
     } catch (error) {

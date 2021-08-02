@@ -5,11 +5,17 @@
     <body>
         <main>
             <div>
-                <a href="/shows/<%=episode.parentShow._id%>"><h1>The Show Name is: <%=episode.parentShow.name%></h1></a>
-                <h2><%=episode.name%></h2>
-                <img src="<%= episode.image %>" alt="" />
-                <p><%=episode.description%></p>
-                <p>Runtime: <%=episode.runtime%> minutes</p>
+                <h1>Homepage</h1>
+                <h2>Username: <%= user.username %></h2>
+               
+                <p>DOB: <%= user.dob %></p>
+                <p>Email: <%= user.email %></p>
+            </div>
+            <div>
+                <a href="/shows/<%= user.showQueue._id %>"><h1>The Show Name is: <%= user.showQueue.name %></h1></a>
+                <h2><%= user.showQueue.name%></h2>
+                <img src="<%= user.showQueue.image %>" alt="" />
+                <p><%= user.showQueue.description %></p>
             </div>
         </main>
     </body>
