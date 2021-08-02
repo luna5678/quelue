@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Register' }) %>
+
+    <body>
+        <main>
+            <div id="registration-box">
+                <h3>Watch your favorite TV shows for free</h3>
+                <h3>Register for an account today!</h3>
+                <div class="registration-form">
+                    <form action="/register" method="POST">
+                        <div>
+                            <label for="username">username</label>
+                            <div class="input-field">
+                                <input type="text" id="username" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="username">email</label>
+                            <div class="input-field">
+                                <input type="email" id="email" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="username">birthdate</label>
+                            <div class="input-field">
+                                <input type="text" id="dob" placeholder="YYYY, MM, DD" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="username">password</label>
+                            <div class="input-field">
+                                <input type="password" id="password" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="username">confirm password</label>
+                            <div class="input-field">
+                                <input type="password" id="password" />
+                            </div>
+                        </div>
+                        <!-- ADD BUTTON TO SUBMIT AFTER AUTH IS SET UP -->
+                    </form>
+                </div>
+
+                <div>
+                    <a href="/login">Already have an account? Log in.</a>
+                </div>
+
+            </div>
+        </main>
+    </body>
+
+</html>
