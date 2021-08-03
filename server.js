@@ -10,7 +10,7 @@ require('./config/db.connection');
 const app = express();
 
 // PORT
-const PORT = process.env.PORT || 4000;
+const PORT = 4000;
 
 /* === Internal Modules === */
 const controllers = require('./controllers'); 
