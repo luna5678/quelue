@@ -42,6 +42,9 @@ app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({
     extended: true }));
+    
+app.use(methodOverride("_method"));
+
 
 /* === Routes === */
 app.use('/', controllers.auth);

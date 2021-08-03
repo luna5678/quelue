@@ -11,7 +11,7 @@ router.get('/:id', async (req, res, next) => {
         const context = {
             user: foundShow,
         };
-        return res.render('users/show.ejs', context);
+        res.render('users/show.ejs', context);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -20,11 +20,13 @@ router.get('/:id', async (req, res, next) => {
 });
 
 
-router.post('/', async (req, res, next) => {
+router.put('/:id', async (req, res, next) => {
     try {
-
-        // grab the id of the series and then .populate('showqueue')
-        // push the id to the showQueue id array 
+        const foundUser = await User.findOneAndUpdate(
+            { _id: req.params.id },
+            { $push: {showQueue: req.body.name} }
+            );
+        console.log('This is what happens when I click Add to queue', foundUser, req.body.name);
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -32,6 +34,7 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+//.populate('showQueue')
 
 // index 
 // router.get('/', (req, res) => {
