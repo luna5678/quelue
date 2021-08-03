@@ -4,7 +4,8 @@ const UserSchema = new mongoose.Schema(
     {
         username: {
             type: String,
-            required: [true, 'username required']
+            required: [true, 'username required'],
+            unique: true
         },
         dob: {
             type: Date,
@@ -12,7 +13,8 @@ const UserSchema = new mongoose.Schema(
         },
         email: {
             type: String,
-            required: [true, 'email required']
+            required: [true, 'email required'],
+            unique: true
         },
         password: {
             type: String,
