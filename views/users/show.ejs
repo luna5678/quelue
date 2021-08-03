@@ -13,10 +13,18 @@
                 <p>Email: <%= user.email %></p>
             </div>
             <div>
-                <a href="/shows/<%= user.showQueue._id %>"><h1>The Show Name is: <%= user.showQueue.name %></h1></a>
-                <h2><%= user.showQueue.name%></h2>
-                <img src="<%= user.showQueue.image %>" alt="" />
-                <p><%= user.showQueue.description %></p>
+                <h2>Queue:</h2>
+                <div class="queue-container">
+                    <% for (let i = 0; i < user.showQueue.length; i++) { %>
+                        <% const queue = user.showQueue[i] %>
+                        <div class="queue-box">
+                        <a href="/shows/<%=queue._id%>">
+                            <img class="thumbnail" src="<%=queue.image%>">
+                            <p><%=queue.name%></p>
+                        </a>
+                        </div>
+                    <%}%>
+                </div>
             </div>
         </main>
     </body>

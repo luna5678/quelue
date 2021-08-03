@@ -1,22 +1,28 @@
 img {
-    width: 600px;
-    height: auto;
+  width: 600px;
+  height: auto;
 }
 
 .thumbnail {
-    width: 200px;
+  width: 200px;
 }
 
 .navbar {
-    background-color: #1B2021;
+  background-color: #1b2021;
 }
 
 .navbar-item-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .navbar-item {
-    color: #2F73A7;
-    font-size: 30px;
+  color: #2f73a7;
+  font-size: 30px;
+}
+
+.queue-container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 40px;
 }
