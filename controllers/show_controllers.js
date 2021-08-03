@@ -23,9 +23,11 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try { 
         const foundUser = await User.findById('61087e63a52d95573687ff93'); 
+        const userShowQueue = foundUser.showQueue;
         const showId = req.body.name;
-        console.log(showId, foundUser, 'found them');
-        foundUser.showQueue.push(showId);
+        userShowQueue.push(showId);
+        foundUser.showQueue = userShowQueue;
+        console.log('-----', userShowQueue, '-----');
         // grab the id of the series and then .populate('showqueue')
         // push the id to the showQueue id array 
     } catch (error) {
@@ -33,7 +35,6 @@ router.post('/', async (req, res, next) => {
         req.error = error;
         return next();
     }
-
 });
 
 
@@ -43,8 +44,8 @@ router.get('/:id', async (req, res, next) => {
         const foundShow = await Show.findById(req.params.id);
         // episodeList = find episodes with same parentShow id
         const episodeList = await Episode.find({ parentShow: req.params.id });
-        const user = await User.findById('61087e63a52d95573687ff93');
-        user.showQueue = foundShow._id;
+        // const user = await User.findById('61087e63a52d95573687ff93');
+        // user.showQueue = foundShow._id;
         // add episodeList to context
         // 
 
@@ -53,7 +54,6 @@ router.get('/:id', async (req, res, next) => {
             show: foundShow,
             episodes: episodeList,
         };
-        console.log(foundShow, 'here', user);
         return res.render('shows/show', context);
     } catch (error) {
         console.log(error);
@@ -61,5 +61,30 @@ router.get('/:id', async (req, res, next) => {
         return next();
     }
 });
+
+// update
+router.put('/', async (req, res, next) => {
+    try { 
+        const foundUser = await User.findById('61087e63a52d95573687ff93'); 
+        const userShowQueue = foundUser.showQueue;
+        const showId = req.body.name;
+        userShowQueue.push(showId);
+
+        User.findByIdAndUpdate('61087e63a52d95573687ff93',
+        {
+            $set: {
+                showQueue: userShowQueue,
+            } 
+        },
+        {
+            new: true,
+        });
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
 
 module.exports = router;
