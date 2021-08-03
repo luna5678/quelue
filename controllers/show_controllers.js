@@ -19,24 +19,6 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-// create
-router.post('/', async (req, res, next) => {
-    try { 
-        const foundUser = await User.findById('61087e63a52d95573687ff93'); 
-        const showId = req.body.name;
-        console.log(showId, foundUser, 'found them');
-        foundUser.showQueue.push(showId);
-        // grab the id of the series and then .populate('showqueue')
-        // push the id to the showQueue id array 
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-
-});
-
-
 // show - for page with an individual Show displayed
 router.get('/:id', async (req, res, next) => {
     try {
