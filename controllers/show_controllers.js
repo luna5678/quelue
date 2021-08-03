@@ -25,8 +25,8 @@ router.get('/:id', async (req, res, next) => {
         const foundShow = await Show.findById(req.params.id);
         // episodeList = find episodes with same parentShow id
         const episodeList = await Episode.find({ parentShow: req.params.id });
-        const user = await User.findById('61087e63a52d95573687ff93');
-        user.showQueue = foundShow._id;
+        // const user = await User.findById('61087e63a52d95573687ff93');
+        // user.showQueue = foundShow._id;
         // add episodeList to context
         // 
 
@@ -35,7 +35,6 @@ router.get('/:id', async (req, res, next) => {
             show: foundShow,
             episodes: episodeList,
         };
-        console.log(foundShow, 'here', user);
         return res.render('shows/show', context);
     } catch (error) {
         console.log(error);
