@@ -19,18 +19,18 @@ const controllers = require('./controllers');
 app.set("view engine", "ejs");
 
 // session controller
-/* app.use(
+app.use(
     session({
         store: MongoStore.create({
-        mongoUrl: process.env.MONGODB_URI }),
-        secret: process.env.SECRET,
+        mongoUrl: 'mongodb://localhost:27017/quelue' }),
+        secret: 'super secret',
         resave: false,
         saveUninitialized: false,
         cookie: {
             maxAge: 1000 * 60 * 60 * 24 * 7* 2,
         },
     })
-); */
+);
 
 
 
