@@ -43,29 +43,4 @@ router.get('/:id', async (req, res, next) => {
     }
 });
 
-// update
-router.put('/', async (req, res, next) => {
-    try { 
-        const foundUser = await User.findById('61087e63a52d95573687ff93'); 
-        const userShowQueue = foundUser.showQueue;
-        const showId = req.body.name;
-        userShowQueue.push(showId);
-
-        User.findByIdAndUpdate('61087e63a52d95573687ff93',
-        {
-            $set: {
-                showQueue: userShowQueue,
-            } 
-        },
-        {
-            new: true,
-        });
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-});
-
-
 module.exports = router;
