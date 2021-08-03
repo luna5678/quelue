@@ -47,6 +47,13 @@ router.get('/:id', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
     try {
         // skipThisRoute();
+        if (req.body.name == undefined) {
+            const updatedUser = await User.findOneAndUpdate(
+            { _id: req.params.id },
+            { $pull: { showQueue: req.body.remove}}
+        ).populate('showQueue');
+        return console.log('This is what happens when I click Remove from queue', updatedUser, req.body.remove);
+        };
         const updatedUser = await User.findOneAndUpdate(
             { _id: req.params.id },
             { $push: { showQueue: req.body.name }}
@@ -61,6 +68,19 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+// router.put('/:id', async (req, res, next) => {
+//     try{
+//         const updatedUser = await User.findOneAndUpdate(
+//             { _id: req.params.id },
+//             { $pull: { showQueue: req.body.name}}
+//         ).populate('showQueue');
+//         console.log('This is what happens when I click Remove from queue', updatedUser, req.body.name);
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// });
 
 // second router that routes likes
 // router.put('/:id', async (req, res, next) => {

@@ -22,8 +22,8 @@
                             <img class="thumbnail" src="<%=queue.image%>">
                             <p><%=queue.name%></p>
                         </a>
-                        <form action="/users/61087e63a52d95573687ff93?_method=DELETE" method="POST">
-                            <input hidden name="name" value="<%= queue._id %> " />
+                        <form action="/users/61087e63a52d95573687ff93?_method=PUT" method="POST">
+                            <input hidden name="remove" value="<%= queue._id %>" />
                             <button type="submit">Remove from queue</button>
                         
                         </form>
