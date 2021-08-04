@@ -33,7 +33,7 @@ router.put('/:id', async (req, res, next) => {
             { _id: req.session.currentUser.id },
             { $pull: { showQueue: req.body.remove}}
         ).populate('showQueue');
-        // return console.log('This is what happens when I click Remove from queue', updatedUser, req.body.remove);
+        
         return res.redirect(`/users/${req.session.currentUser.id}`); 
         };
 
@@ -53,7 +53,8 @@ router.put('/:id', async (req, res, next) => {
             { $push: { showQueue: req.body.name }}
             );
         console.log('This is what happens when I click Add to queue');
-        return res.redirect(`/users/${req.params.id}`)
+        return res.redirect(`/users/${req.params.id}`);
+
     } catch (error) {
         console.log(error);
         req.error = error;
