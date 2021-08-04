@@ -43,6 +43,7 @@ router.post('/register', async (req, res) => {
     }
 });
 
+// login POST
 router.post('/login', async (req, res) => {
     try {
         const foundUser = await User.findOne({ username: req.body.username });
@@ -66,6 +67,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
+// logout GET
 router.get('/logout', async (req, res) => {
     try {
         await req.session.destroy();
