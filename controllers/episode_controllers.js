@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {Episode, Show} = require('../models');
+const {User, Show, Episode } = require('../models');
 
 // INDEX PAGE IF NEEDED
 // router.get('/', async (req, res, next) => {
