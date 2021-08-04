@@ -3,8 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const { User } = require('../models');
 
-// testing ejs pages for now. authentication is not yet set up
-
 // register GET
 router.get('/register', (req, res) => {
     return res.render('auth/register');
@@ -81,8 +79,11 @@ router.get('/logout', async (req, res) => {
 // edit profile - GET
 router.get('/:id/edit', async (req, res) => {
     try {
-        await User.findById(req.session.currentUser.id);
-        return res.render('edit');
+        const foundUser = await User.findById(req.session.currentUser.id);
+        const context = {
+            user: foundUser
+        }
+        return res.render('auth/edit.ejs', context);
         
     } catch (error) {
         console.log(error);
@@ -92,12 +93,36 @@ router.get('/:id/edit', async (req, res) => {
 
 // update profile - PUT
 router.put('/:id', async (req, res) => {
-    await User.findByIdAndUpdate(
+
+    try {
+        console.log('====this is working====');
+        if (req.body.password !== req.body.passwordTwo) {
+            return res.send('passwords do not match')
+        }
+    
+        const updatedUser = await User.findByIdAndUpdate(
         req.session.currentUser.id,
-        req.body
+        { $set: req.body }, { new: true }
     );
+    console.log('-=-=-=-=-=-=-=-', updatedUser);
     return res.redirect(`/users/${req.session.currentUser.id}`);
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    } 
 });
 
+// delete - DELETE
+router.delete('/:id', async (req, res, next) => {
+    try {
+        await User.findByIdAndDelete(req.session.currentUser.id);
+        console.log('====User deleted====');
+        return res.redirect('/register');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
 
 module.exports = router;
