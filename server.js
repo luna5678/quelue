@@ -45,6 +45,8 @@ app.use(express.static("public"));
 
 app.use(methodOverride("_method"));
 
+app.use(require('./utils/logger'));
+
 app.use(express.urlencoded({
     extended: true }));
     

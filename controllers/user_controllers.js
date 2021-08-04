@@ -30,25 +30,29 @@ router.put('/:id', async (req, res, next) => {
         // Remove from queue functionality
         if (req.body.name == undefined) {
             const updatedUser = await User.findOneAndUpdate(
-            { _id: req.params.id },
+            { _id: req.session.currentUser.id },
             { $pull: { showQueue: req.body.remove}}
         ).populate('showQueue');
         // return console.log('This is what happens when I click Remove from queue', updatedUser, req.body.remove);
-        return res.redirect(`/users/${req.params.id}`); 
+        return res.redirect(`/users/${req.session.currentUser.id}`); 
         };
 
         // Prevent duplication functionality
-        const foundUserShow = await User.exists({showQueue: req.body.name});
-        if (foundUserShow) {
-            return console.log('You already have this show in your queue!');
-        };
+        const foundUserShow = await User.findOne({ _id: req.session.currentUser.id });
+        const isInQueue = foundUserShow.showQueue.includes(req.body.name);
+        console.log('=======', isInQueue);
+        if (isInQueue) {
+            return;
+        }
+        
+
 
         // Add to queue functionality
         const updatedUser = await User.findOneAndUpdate(
-            { _id: req.params.id },
+            { _id: req.session.currentUser.id },
             { $push: { showQueue: req.body.name }}
             );
-        console.log('This is what happens when I click Add to queue', updatedUser, req.body.name);
+        console.log('This is what happens when I click Add to queue');
         return res.redirect(`/users/${req.params.id}`)
     } catch (error) {
         console.log(error);
