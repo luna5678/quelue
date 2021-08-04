@@ -93,7 +93,7 @@ router.get('/:id/edit', async (req, res) => {
 
 // update profile - PUT
 router.put('/:id', async (req, res) => {
-    
+
     try {
         console.log('====this is working====');
         if (req.body.password !== req.body.passwordTwo) {
@@ -116,8 +116,8 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res, next) => {
     try {
         await User.findByIdAndDelete(req.session.currentUser.id);
-        
-        return redirect('/register');
+        console.log('====User deleted====');
+        return res.redirect('/register');
     } catch (error) {
         console.log(error);
         req.error = error;
