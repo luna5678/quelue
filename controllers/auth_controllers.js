@@ -95,11 +95,22 @@ router.get('/:id/edit', async (req, res) => {
 
 // update profile - PUT
 router.put('/:id', async (req, res) => {
-    await User.findByIdAndUpdate(
+    try {
+        console.log('======is this working?=======')
+        if (req.body.password !== req.body.passwordTwo) {
+            return res.send('passwords do not match')
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(
         req.session.currentUser.id,
-        req.body
+        { $set: req.body }, { new: true }
     );
+    console.log('-=-=-=-=-=-=-=-', updatedUser);
     return res.redirect(`/users/${req.session.currentUser.id}`);
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
 });
 
 

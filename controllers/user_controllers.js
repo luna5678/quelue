@@ -40,7 +40,7 @@ router.put('/:id', async (req, res, next) => {
         // Prevent duplication functionality
         const foundUserShow = await User.findOne({ _id: req.session.currentUser.id });
         const isInQueue = foundUserShow.showQueue.includes(req.body.name);
-        console.log('=======', isInQueue);
+
         if (isInQueue) {
             return;
         }
@@ -52,7 +52,7 @@ router.put('/:id', async (req, res, next) => {
             { _id: req.session.currentUser.id },
             { $push: { showQueue: req.body.name }}
             );
-        console.log('This is what happens when I click Add to queue');
+        
         return res.redirect(`/users/${req.params.id}`);
 
     } catch (error) {

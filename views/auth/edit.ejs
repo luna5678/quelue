@@ -7,8 +7,9 @@
             <div id="acccount-box">
                 <h3>Make changes to your account</h3>
                 <div class="account-form">
-                    <form action='/<%= user.id %>/edit?_method=PUT' method="POST"> 
+                    <form action="/<%= user.id %>/edit?_method=PUT" method="POST"> 
                         <div>
+                            <p><%= user.id %></p>
                             <label for="username">username</label>
                             <div class="input-field">
                                 <input type="text" name="username" id="username" value="<%= user.username %>" />
@@ -34,15 +35,10 @@
                             </div>
                         </div>
                         <div>
-                            <button>Submit</button>
+                            <button type="submit">Submit</button>
                         </div>
                     </form>
                 </div>
-
-                <div>
-                    <a href="/login">Already have an account? Log in.</a>
-                </div>
-
             </div>
         </main>
     </body>
