@@ -27,7 +27,6 @@ router.post('/register', async (req, res) => {
             $or: [{ email: req.body.email }, { username: req.body.username }], 
         });
         if (foundUser) {
-            console.log(req.body.username);
             return res.redirect('/login');
         }
         const salt = await bcrypt.genSalt(10);
@@ -48,13 +47,11 @@ router.post('/login', async (req, res) => {
     try {
         const foundUser = await User.findOne({ username: req.body.username });
         if (!foundUser)  {
-            console.log(req.body.username);
             return res.redirect('/register');
         }
 
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         if (!match)  { 
-            console.log(match);
             return res.send('password invalid');
         }
 
@@ -68,4 +65,15 @@ router.post('/login', async (req, res) => {
         return res.send(error);
     }
 });
+
+router.get('/logout', async (req, res) => {
+    try {
+        await req.session.destroy();
+        return res.redirect('/login');
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
+});
+
 module.exports = router;
