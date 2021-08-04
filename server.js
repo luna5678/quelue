@@ -3,14 +3,14 @@ const express = require('express');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-require('dotenv').config();
 require('./config/db.connection');
+require('dotenv').config();
 
 // module instance
 const app = express();
 
 // PORT
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 /* === Internal Modules === */
 const controllers = require('./controllers'); 
@@ -22,8 +22,8 @@ app.set("view engine", "ejs");
 app.use(
     session({
         store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost:27017/quelue' }),
-        secret: 'super secret',
+        mongoUrl: process.env.MONGODB_URI }),
+        secret: process.env.SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {
@@ -35,6 +35,11 @@ app.use(
 
 
 /* === Middleware === */
+
+app.use((req, res, next) => {
+    res.locals.user = req.session.currentUser;
+    return next();
+});
 
 app.use(express.static("public"));
 
