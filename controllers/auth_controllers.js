@@ -3,8 +3,6 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const { User } = require('../models');
 
-// testing ejs pages for now. authentication is not yet set up
-
 // register GET
 router.get('/register', (req, res) => {
     return res.render('auth/register');
@@ -95,12 +93,13 @@ router.get('/:id/edit', async (req, res) => {
 
 // update profile - PUT
 router.put('/:id', async (req, res) => {
+    
     try {
-        console.log('======is this working?=======')
+        console.log('====this is working====');
         if (req.body.password !== req.body.passwordTwo) {
             return res.send('passwords do not match')
         }
-
+    
         const updatedUser = await User.findByIdAndUpdate(
         req.session.currentUser.id,
         { $set: req.body }, { new: true }
@@ -110,8 +109,20 @@ router.put('/:id', async (req, res) => {
     } catch (error) {
         console.log(error);
         return res.send(error);
-    }
+    } 
 });
 
+// delete - DELETE
+router.delete('/:id', async (req, res, next) => {
+    try {
+        await User.findByIdAndDelete(req.session.currentUser.id);
+        
+        return redirect('/register');
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
 
 module.exports = router;
