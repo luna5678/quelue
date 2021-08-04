@@ -78,4 +78,26 @@ router.get('/logout', async (req, res) => {
     }
 });
 
+// edit profile - GET
+router.get('/:id/edit', async (req, res) => {
+    try {
+        await User.findById(req.session.currentUser.id);
+        return res.render('edit');
+        
+    } catch (error) {
+        console.log(error);
+        return res.send(error);
+    }
+});
+
+// update profile - PUT
+router.put('/:id', (req, res) => {
+    await User.findByIdAndUpdate(
+        req.session.currentUser.id,
+        req.body
+    );
+    return res.redirect(`/users/${req.session.currentUser.id}`);
+});
+
+
 module.exports = router;
