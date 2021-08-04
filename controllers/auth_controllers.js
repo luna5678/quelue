@@ -104,7 +104,6 @@ router.put('/:id', async (req, res) => {
         req.session.currentUser.id,
         { $set: req.body }, { new: true }
     );
-    console.log('-=-=-=-=-=-=-=-', updatedUser);
     return res.redirect(`/users/${req.session.currentUser.id}`);
     } catch (error) {
         console.log(error);
@@ -116,7 +115,6 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res, next) => {
     try {
         await User.findByIdAndDelete(req.session.currentUser.id);
-        console.log('====User deleted====');
         return res.redirect('/register');
     } catch (error) {
         console.log(error);
