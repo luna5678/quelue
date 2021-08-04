@@ -91,7 +91,7 @@ router.get('/:id/edit', async (req, res) => {
 });
 
 // update profile - PUT
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
     await User.findByIdAndUpdate(
         req.session.currentUser.id,
         req.body
