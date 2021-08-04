@@ -81,8 +81,11 @@ router.get('/logout', async (req, res) => {
 // edit profile - GET
 router.get('/:id/edit', async (req, res) => {
     try {
-        await User.findById(req.session.currentUser.id);
-        return res.render('edit');
+        const foundUser = await User.findById(req.session.currentUser.id);
+        const context = {
+            user: foundUser
+        }
+        return res.render('auth/edit.ejs', context);
         
     } catch (error) {
         console.log(error);
@@ -91,7 +94,7 @@ router.get('/:id/edit', async (req, res) => {
 });
 
 // update profile - PUT
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
     await User.findByIdAndUpdate(
         req.session.currentUser.id,
         req.body
