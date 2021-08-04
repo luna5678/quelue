@@ -1,3 +1,7 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 img {
   width: 600px;
   height: auto;
@@ -8,12 +12,13 @@ img {
 }
 
 .navbar {
-  background-color: #1b2021;
+  background-color: #fff;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 .navbar-item-container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .navbar-item {
