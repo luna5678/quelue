@@ -12,7 +12,7 @@
                 <p><%=episode.description%></p>
                 <p>Runtime: <%=episode.runtime%> minutes</p>
                 <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-                    <input hidden name="episodeName" value="<%= episode._id %>" />
+                    <input hidden name="name" value="<%= episode._id %>" />
                     <button type="submit">Like this Episode</button>
                 </form>
             </div>

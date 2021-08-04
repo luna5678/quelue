@@ -31,26 +31,26 @@
                     <%}%>
                 </div>
             </div>
-            <div>
+           <!--  <div>
                 <h2>Liked Episodes:</h2>
                 <div class="">
-                    <% for (let i = 0; i < user.episodeLikes.length; i++) { %>
-                        <% const like = user.episodeLikes[i];
+                    % for (let i = 0; i < user.episodeLikes.length; i++) { %>
+                        % const like = user.episodeLikes[i];
                         console.log(user.episodeLikes); %>
                         <div class="">
-                        <a href="/episodes/<%= like._id %>">
-                            <img class="thumbnail" src="<%=like.image%>">
-                            <p><%=like.name%></p>
+                        <a href="/episodes/%= like._id %>">
+                            <img class="thumbnail" src="%=like.image%>">
+                            <p>%=like.name%></p>
                         </a>
-                        <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-                            <input hidden name="remove" value="<%= like._id %>" />
+                        <form action="/users/%= user.id %>?_method=PUT" method="POST">
+                            <input hidden name="remove" value="%= like._id %>" />
                             <button type="submit">Unlike</button>
                         
                         </form>
                         </div>
-                    <%}%>
+                    %}%>
                 </div>
-            </div>
+            </div> -->
         </main>
     </body>
 
