@@ -15,6 +15,23 @@ router.get('/register', (req, res) => {
     return res.render('auth/register');
 });
 
+router.post('/login', async (req, res) => {
+    try {
+        const foundUser = await User.findOne({ email: req.body.email });
+        if (!foundUser) return res.redirect('/register');
+        const match = await bcrypt.compare(req.body.password, foundUser.password);
+        if (!match) return res.send('password invalid');
+        req.session.currentUser = {
+            id: foundUser._id,
+            username: foundUser.username,
+        };
+        return res.redirect('/products');
+    } catch (error) {
+        console.log(error);
+        res.send(error);
+    }
+});
+
 // register POST
 router.post('/register', async (req, res) => {
     try {
