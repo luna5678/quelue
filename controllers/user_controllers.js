@@ -32,9 +32,9 @@ router.put('/:id', async (req, res, next) => {
             const updatedUser = await User.findOneAndUpdate(
             { _id: req.session.currentUser.id },
             { $pull: { showQueue: req.body.remove}}
-        ).populate('showQueue');
+            ).populate('showQueue');
         
-        return res.redirect(`/users/${req.session.currentUser.id}`); 
+            return res.redirect(`/users/${req.session.currentUser.id}`); 
         };
 
         // Prevent duplication functionality
@@ -45,8 +45,6 @@ router.put('/:id', async (req, res, next) => {
             return;
         }
         
-
-
         // Add to queue functionality
         const updatedUser = await User.findOneAndUpdate(
             { _id: req.session.currentUser.id },
@@ -62,5 +60,40 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+router.put('/:id', async (req, res, next) => {
+    try {
+        // Remove from like functionality
+        if (req.body.name == undefined) {
+            const updatedUser = await User.findOneAndUpdate(
+            { _id: req.session.currentUser.id },
+            { $pull: { episodeLikes: req.body.remove}}
+            ).populate('episodeLikes');
+            
+            return res.redirect(`/users/${req.session.currentUser.id}`); 
+    };
+    // Prevent duplication functionality
+    const foundUserEpisode = await User.findOne({ _id: req.session.currentUser.id });
+    console.log(foundUserEpisode);
+    const isInLikes = foundUserEpisode.episodeLikes.includes(req.body.name);
+
+    if (isInLikes) {
+        return;
+    }
+
+     // Add to likes functionality
+     const updatedUser = await User.findOneAndUpdate(
+        { _id: req.session.currentUser.id },
+        { $push: { episodeLikes: req.body.name }}
+        );
+        console.log('=====', req.body.name, '=====');
+    
+    return res.redirect(`/users/${req.params.id}`);
+
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
 
 module.exports = router;
