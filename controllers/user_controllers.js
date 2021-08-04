@@ -57,7 +57,7 @@ router.put('/:id', async (req, res, next) => {
 
         const foundUserShow = await User.exists({showQueue: req.body.name});
         if (foundUserShow) {
-            return console.log('You already have this show in your query!');
+            return console.log('You already have this show in your query!', req.body.name);
         };
 
         const updatedUser = await User.findOneAndUpdate(
