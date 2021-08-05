@@ -8,14 +8,13 @@
     </div>
     <div class="nav-user-links">
         <span class="nav-user-padding">
-            <a href="/users/<%= user.id %>">
-                <%= user.username %></a>
+            <p><%= user.username %></p>
             </span>
         <span class="nav-user-padding">
             <a href="/<%= user.id %>/edit">Edit Profile</a>
         </span>
         <span>
-        <form action="/logout" method="POST">
+        <form action="/logout" method="GET">
                 <button class="logout-button" type="submit">Logout</button>
         </form>
         </span>

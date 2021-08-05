@@ -86,11 +86,6 @@ router.get('/logout', async (req, res) => {
     }
 });
 
-// logout button - POST
-router.post('/logout', (req, res) => {
-    return res.redirect('/login');
-});
-
 // edit profile - GET
 router.get('/:id/edit', async (req, res) => {
     try {
