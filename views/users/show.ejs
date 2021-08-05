@@ -3,17 +3,14 @@
 <%- include('../partials/head/_head', { page: user.username }) %>
 
     <body>
+        <!-- NAV PARTIAL -->
         <%- include('../partials/navbar/_navbar') %>
         <main>
-            <!-- <div>
-                <h1>Homepage</h1>
-                <h2>Username: <%= user.username %></h2>
-               
-                <p>DOB: <%= user.dob %></p>
-                <p>Email: <%= user.email %></p>
-            </div> -->
+
             <article class="user-queue-index">
                 <h1 class="index-header">MY QUEUE</h1>
+
+                <!-- LOOP TO DISPLAY ALL QUEUED SHOWS -->
                 <div class="index-boxes-container">
                     <% for (let i = 0; i < user.showQueue.length; i++) { %>
                         <% const queue = user.showQueue[i] %>
@@ -22,6 +19,7 @@
                             <img class="thumbnail" src="<%=queue.image%>">
                             <p><%=queue.name%></p>
                         </a>
+
                         <form action="/users/<%= user.id %>?_method=PUT" method="POST">
                             <input hidden name="remove" value="<%= queue._id %>" />
                             <button type="submit">Remove from queue</button>
@@ -31,26 +29,7 @@
                     <%}%>
                 </div>
                 </article>
-           <!--  <div>
-                <h2>Liked Episodes:</h2>
-                <div class="">
-                    % for (let i = 0; i < user.episodeLikes.length; i++) { %>
-                        % const like = user.episodeLikes[i];
-                        console.log(user.episodeLikes); %>
-                        <div class="">
-                        <a href="/episodes/%= like._id %>">
-                            <img class="thumbnail" src="%=like.image%>">
-                            <p>%=like.name%></p>
-                        </a>
-                        <form action="/users/%= user.id %>?_method=PUT" method="POST">
-                            <input hidden name="remove" value="%= like._id %>" />
-                            <button type="submit">Unlike</button>
-                        
-                        </form>
-                        </div>
-                    %}%>
-                </div>
-            </div> -->
+
         </main>
     </body>
 

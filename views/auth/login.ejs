@@ -2,50 +2,59 @@
 <html lang="en">
 <%- include('../partials/head/_head', { page: 'Login' }) %>
 
-    <body>
+<body>
 
-        <nav id="navbar">
-            <div id="logo">quelue</div>
-        </nav>
-        
-        <main>
-            <div id="account-box">
-                <h3>Watch your favorite TV shows</h3>
-                <h3>Login to start the quelue!</h3>
-                <div class="account-form">
-                    <form action="/login" method="POST">
-                        <div class="form-section">
-                            <label for="username">username</label>
-                            <div class="input-field">
-                                <input 
-                                type="text" 
-                                name="username"
-                                id="username" 
-                                />
-                            </div>
-                        </div>
-                        <div class="form-section">
-                            <label for="username">password</label>
-                            <div class="input-field">
-                                <input 
-                                type="password" 
-                                name="password"
-                                id="password" 
-                                />
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <button>Submit</button>
-                        </div>
-                    </form>
-                </div>
+    <nav id="navbar">
+        <div id="logo">quelue</div>
+    </nav>
+    
+    <main>
 
-                <div class="register-login-redirect">
-                    <a href="/register">Don't have an account? Register for free.</a>
-                </div>
+        <div id="account-box">
+            <h3>Watch your favorite TV shows</h3>
+            <h3>Login to start the quelue!</h3>
 
+            <!-- LOGIN FORM -->
+            <div class="account-form">
+
+                <form action="/login" method="POST">
+
+                    <div class="form-section">
+                        <label for="username">username</label>
+                        <div class="input-field">
+                            <input 
+                            type="text" 
+                            name="username"
+                            id="username" 
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label for="username">password</label>
+                        <div class="input-field">
+                            <input 
+                            type="password" 
+                            name="password"
+                            id="password" 
+                            />
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button>Submit</button>
+                    </div>
+
+                </form>
+                
             </div>
-        </main>
-    </body>
+
+            <div class="register-login-redirect">
+                <a href="/register">Don't have an account? Register for free.</a>
+            </div>
+
+        </div>
+    </main>
+</body>
 
 </html>
