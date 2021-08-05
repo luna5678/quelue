@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const functions = require('../public/scripts/app');
 const { User, Show, Episode } = require('../models');
 
 // register GET
@@ -10,7 +11,12 @@ router.get('/register', (req, res) => {
 
 // login GET
 router.get('/login', (req, res) => {
-    return res.render('auth/login')
+    return res.render('auth/login');
+});
+
+// password error GET
+router.get('/register_password_error', (req, res) => {
+    return res.render('auth/register_password_error');
 });
 
 // register POST
@@ -18,7 +24,10 @@ router.post('/register', async (req, res) => {
     try {
         
         if (req.body.password !== req.body.passwordTwo) {
-            return res.send('passwords do not match')
+            // toggle text that alerts user to password not matching
+            // const errorText = req.body.error_text;
+            // errorText.classList.toggle('visibility');
+            return res.redirect('/register_password_error');
         }
         
         const foundUser = await User.exists({ 

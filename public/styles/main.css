@@ -34,4 +34,8 @@ img {
   grid-gap: 40px;
 }
 
+#error-text {
+  visibility: hidden;
+}
+
 /*# sourceMappingURL=main.css.map */

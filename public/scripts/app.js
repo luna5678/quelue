@@ -1,1 +1,7 @@
-const thisWorks = console.log('the button works');
+const toggleError = () => {
+    $('.error-text').toggle();
+}
+
+
+
+
