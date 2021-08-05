@@ -45,19 +45,26 @@ app.use(express.static("public"));
 
 app.use(methodOverride("_method"));
 
-app.use(require('./utils/logger'));
-
 app.use(express.urlencoded({
     extended: true }));
     
 app.use(methodOverride("_method"));
+    
+app.use(require('./utils/logger'));
 
+const authRequired = (req, res, next) => {
+    if (!req.session.currentUser) {
+        return res.redirect('/login');
+    }
+
+    next();
+}
 
 /* === Routes === */
 app.use('/', controllers.auth);
-app.use('/users', controllers.user);
-app.use('/shows', controllers.show);
-app.use('/episodes', controllers.episode);
+app.use('/users', authRequired, controllers.user);
+app.use('/shows', authRequired, controllers.show);
+app.use('/episodes', authRequired, controllers.episode);
 
 
 app.listen(PORT, () => console.log(`Ready to quelue, listening for client requests on port:`, PORT));
