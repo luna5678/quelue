@@ -110,7 +110,7 @@ main {
   cursor: pointer;
 }
 
-.show-page-container {
+.ep-show-page-container, .show-show-page-container {
   margin-top: 40px;
   height: 380px;
   width: 100%;
@@ -119,38 +119,90 @@ main {
   grid-template-columns: 1fr 1fr;
   padding-top: 40px;
 }
-.show-page-container .show-page-header-link {
+.ep-show-page-container .show-page-header-link, .show-show-page-container .show-page-header-link {
   text-decoration: none;
   color: #004e89;
 }
-.show-page-container .show-page-header-link:hover {
+.ep-show-page-container .show-page-header-link:hover, .show-show-page-container .show-page-header-link:hover {
   text-decoration: underline;
 }
-.show-page-container h1 {
+.ep-show-page-container h1, .show-show-page-container h1 {
   color: #004e89;
   font-weight: 400;
 }
-.show-page-container h1 a {
+.ep-show-page-container h1 a, .show-show-page-container h1 a {
   text-decoration: none;
 }
-.show-page-container .return-to-show-link {
+.ep-show-page-container .return-to-show-link, .show-show-page-container .return-to-show-link {
   color: #ffa90a;
 }
-.show-page-container .return-to-show-link:hover {
+.ep-show-page-container .return-to-show-link:hover, .show-show-page-container .return-to-show-link:hover {
   text-decoration: none;
 }
-.show-page-container img {
+.ep-show-page-container img, .show-show-page-container img {
   width: 500px;
 }
-.show-page-container .show-page-container-left {
+.ep-show-page-container .show-page-container-left, .show-show-page-container .show-page-container-left {
   padding: 20px 20px 20px 40px;
 }
-.show-page-container .show-page-container-right {
+.ep-show-page-container .show-page-container-right, .show-show-page-container .show-page-container-right {
   padding: 20px 40px 20px 20px;
+}
+
+.show-show-page-container .cta-button-green {
+  border: none;
+  background-color: #6da34d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.show-show-page-container .cta-button-green:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .episode-runtime {
   font-style: italic;
+}
+
+.episode-list-container h2 {
+  color: white;
+  letter-spacing: 0.15em;
+  margin-top: 30px;
+}
+.episode-list-container .episode-list-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  align-content: center;
+  height: 200px;
+  width: 100%;
+  background-color: white;
+}
+.episode-list-container .episode-boxes {
+  justify-self: center;
+  align-self: center;
+  color: black;
+}
+.episode-list-container .episode-info-boxes {
+  justify-self: center;
+  align-self: center;
+  padding-right: 40px;
+}
+.episode-list-container .thumbnail {
+  width: 250px;
+}
+.episode-list-container .episode-info-header {
+  color: black;
+  padding: auto;
+  margin: 0;
+}
+.episode-list-container .episode-info-link {
+  color: black;
+  text-decoration: none;
+}
+.episode-list-container .episode-info-link:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=main.css.map */

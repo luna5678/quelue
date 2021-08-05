@@ -2,6 +2,7 @@ $primary-color: #004e89;
 $secondary-color: #2f73a7;
 $warn-color: #ffa90a;
 $button-color: #d4ece5;
+$green-button-color: #6da34d;
 $background-color: #999999;
 $body-font-stack: "Montserrat", sans-serif;
 $heading-font-stack: "Nanum Gothic", sans-serif;
@@ -139,7 +140,7 @@ main {
   }
 }
 
-.show-page-container {
+.ep-show-page-container {
   margin-top: 40px;
   height: 380px;
   width: 100%;
@@ -187,6 +188,72 @@ main {
   }
 }
 
+.show-show-page-container {
+  @extend .ep-show-page-container;
+
+  .cta-button-green {
+    border: none;
+    background-color: $green-button-color;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .cta-button-green:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
 .episode-runtime {
   font-style: italic;
+}
+
+.episode-list-container {
+  h2 {
+    color: white;
+    letter-spacing: 00.15em;
+    margin-top: 30px;
+  }
+
+  .episode-list-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    align-content: center;
+    height: 200px;
+    width: 100%;
+    background-color: white;
+  }
+
+  .episode-boxes {
+    justify-self: center;
+    align-self: center;
+    color: black;
+  }
+
+  .episode-info-boxes {
+    justify-self: center;
+    align-self: center;
+    padding-right: 40px;
+  }
+
+  .thumbnail {
+    width: 250px;
+  }
+
+  .episode-info-header {
+    color: black;
+    padding: auto;
+    margin: 0;
+  }
+
+  .episode-info-link {
+    color: black;
+    text-decoration: none;
+  }
+
+  .episode-info-link:hover {
+    text-decoration: underline;
+  }
 }

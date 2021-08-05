@@ -6,26 +6,48 @@
 <body>
     <%- include('../partials/navbar/_navbar') %>
     <main>
-        <div>
-            <a href="/shows/<%= show._id %>"><h1></h1></a>
-            <img src="<%= show.image %>" alt="" />
-            <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-                <!-- <input type="button" name="showQueue" value="Add to queue"/> -->
-                <input hidden name="name" value="<%= show._id %>" />
-                <button type="submit">Add to queue</button>
-            </form>
-        </div>
-        <div>
-            <% for (let idx=0; idx < episodes.length; idx++) { %>
-                <% const episode=episodes[idx] %>
-                    <img class="thumbnail" src="<%= episode.image %>" alt="" />
-                    <a href="/episodes/<%=episode.id%>">
-                        <h2><%=episode.name%></h2>
-                    </a>
-                    
-                        <p><%=episode.description%></p>
-                    <% } %>
-        </div>
+        <article class="show-show-page-container">
+            <div class="show-page-container-left">
+                <h1><%= show.name %></h1>
+                <p><%=show.description%></p>
+                <p class="episode-runtime">3 Episodes</p>
+                <form action="/users/<%= user.id %>?_method=PUT" method="POST">
+                    <!-- <input type="button" name="showQueue" value="Add to queue"/> -->
+                    <input hidden name="name" value="<%= show._id %>" />
+                    <button class="cta-button-green" type="submit">Add to queue</button>
+                </form>
+            </div>
+
+            <div class="show-page-container-right">
+                <img src="<%= show.image %>" alt="" />
+            </div>
+            <!-- <a href="/shows/<%= show._id %>"><h1></h1></a> -->
+        </article>
+
+        <article class="episode-list-container">
+            <h2>EPISODES</h2>
+            <div class="episode-list-grid">
+                <% for (let idx=0; idx < episodes.length; idx++) { %>
+                    <% const episode=episodes[idx] %>
+                    <div class="episode-boxes">
+                        <img class="thumbnail" src="<%= episode.image %>" alt="" />
+                    </div>
+                    <div class="episode-info-boxes">
+                        <a href="/episodes/<%=episode.id%>" class="episode-info-link">
+                            <h2 class="episode-info-header">
+                                <%=episode.name%>
+                            </h2>
+                        </a>
+                        
+                        <p>
+                            <%=episode.description%>
+                        </p>
+                    </div>
+                        
+            </div>
+                                    <% } %>
+            
+        </article>
     </main>
 </body>
 </html>
