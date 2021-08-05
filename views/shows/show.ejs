@@ -12,7 +12,7 @@
                 <p><%=show.description%></p>
                 <p class="episode-runtime">3 Episodes</p>
                 <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-                    <!-- <input type="button" name="showQueue" value="Add to queue"/> -->
+
                     <input hidden name="name" value="<%= show._id %>" />
                     <button class="cta-button-green" type="submit">Add to queue</button>
                 </form>
@@ -25,28 +25,29 @@
         </article>
 
         <article class="episode-list-container">
-        <h2 class="show-show-ep-title">EPISODES</h2>
-            <div class="episode-list-grid">
-                <% for (let idx=0; idx < episodes.length; idx++) { %>
-                    <% const episode=episodes[idx] %>
-                    
-                    <div class="episode-boxes">
-                        <img class="thumbnail" src="<%= episode.image %>" alt="" />
-                    </div>
-                    <div class="episode-info-boxes">
-                        <a href="/episodes/<%=episode.id%>" class="episode-info-link">
-                            <h2 class="episode-info-header">
-                                <%=episode.name%>
-                            </h2>
-                        </a>
-                        
-                        <p>
-                            <%=episode.description%>
-                        </p>
-                    </div>
-                        
-            </div>
-                                    <% } %>
+            <h2>EPISODES</h2>
+                
+                    <% for (let idx=0; idx < episodes.length; idx++) { %>
+                        <% const episode=episodes[idx] %>
+                        <div class="episode-list-grid">
+                        <div class="episode-img-boxes">
+                            <img class="thumbnail" src="<%= episode.image %>" alt="" />
+                        </div>
+                        <div class="episode-info-boxes">
+                            <a href="/episodes/<%=episode.id%>" class="episode-info-link">
+                                <h2 class="episode-info-header">
+                                    <%=episode.name%>
+                                </h2>
+                            </a>
+                            
+                            <p>
+                                <%=episode.description%>
+                            </p>
+                        </div>
+                        </div>
+                            
+                </div>
+                                        <% } %>
             
         </article>
     </main>
