@@ -30,6 +30,11 @@ QUELUE
         
         Quelue was built beginning with the server and models of the three Schema that organize all of our data: Users, Shows, and Episodes. Shows share a one-to-many relationship with Episodes, and Users share a many-to-many relationship with Shows.
 
+        
+        ![Alt text](public/images/Screen Shot 2021-07-30 at 10.49.35 AM.png?raw=true "db relationships")
+
+
+
    UNSOLVED PROBLEMS
 
 
