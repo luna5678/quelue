@@ -11,15 +11,22 @@
             <a href="/users/<%= user.id %>">
                 <%= user.username %></a>
             </span>
+        <span class="nav-user-padding">
             <a href="/<%= user.id %>/edit">Edit Profile</a>
-        </div>
+        </span>
+        <span>
+        <form action="/logout" method="POST">
+                <button class="logout-button" type="submit">Logout</button>
+        </form>
+        </span>
+    </div>
         
-        <div class="">
+        <!-- <div class="">
             <form action="/logout" method="POST">
                 <div>
-                    <button type="submit">Logout</button>
+                    <button class="logout-button" type="submit">Logout</button>
                 </div>
             </form>
-        </div>
+        </div> -->
     <!-- <a class="navbar-item" href="/users/< %= user._id %>">Homepage</a> -->
 </nav>

@@ -7,6 +7,24 @@ body {
   box-sizing: border-box;
 }
 
+#error-text {
+  visibility: hidden;
+}
+
+.logout-button {
+  border: none;
+  background-color: white;
+  color: #2f73a7;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  height: 15px;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #navbar {
   padding: 20px;
   margin: 0;
@@ -15,7 +33,7 @@ body {
   font-weight: bold;
   color: #2f73a7;
   display: grid;
-  grid-template-columns: 200px 1fr 200px;
+  grid-template-columns: 200px 1fr 250px;
   justify-items: center;
   align-items: center;
 }
@@ -86,7 +104,6 @@ main {
   padding: 10px 15px;
   border-radius: 20px;
   text-transform: uppercase;
-  font-size: 12px;
 }
 .user-queue-index button:hover {
   transform: scale(1.05);
