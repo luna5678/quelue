@@ -13,9 +13,14 @@ router.get('/login', (req, res) => {
     return res.render('auth/login');
 });
 
-// password error GET
+// registration password error GET
 router.get('/register_password_error', (req, res) => {
     return res.render('auth/register_password_error');
+});
+
+// login password error GET
+router.get('/login_password_error', (req, res) => {
+    return res.render('auth/login_password_error');
 });
 
 // register POST
@@ -23,7 +28,6 @@ router.post('/register', async (req, res) => {
     try {
         
         if (req.body.password !== req.body.passwordTwo) {
-        
             return res.redirect('/register_password_error');
         }
         
@@ -57,7 +61,7 @@ router.post('/login', async (req, res) => {
 
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         if (!match)  { 
-            return res.send('password invalid');
+            return res.redirect('/login_password_error');
         }
 
         req.session.currentUser = {
