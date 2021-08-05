@@ -101,14 +101,14 @@ router.get('/:id/edit', async (req, res) => {
 
 // edit profile password error - GET
 router.get('/:id/edit_password_error', (req, res) => {
-    
-})
+    return res.render('/auth/edit_password_error');
+});
 
 // update profile - PUT
 router.put('/:id', async (req, res) => {
 
     try {
-        console.log('====this is working====');
+        
         if (req.body.password !== req.body.passwordTwo) {
             return res.send('passwords do not match')
         }
