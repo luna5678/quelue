@@ -4,13 +4,18 @@
 <body>
     <%- include('../partials/navbar/_navbar') %>
     <main>
-        <div>
-            <% for (let idx = 0; idx < shows.length; idx++) { %> <% const show = shows[idx] %>
-                <img class="thumbnail" src="<%= show.image %>" alt="" />
-                <a href="/shows/<%=show.id%>">
-                    <p><%=show.name%></p>
-                </a>
-            <% } %> 
+        <div class="index-page">
+            <h1 class="index-header">DISCOVER TV SHOWS</h1>
+            <div class="index-boxes-container">
+                    <% for (let idx = 0; idx < shows.length; idx++) { %> <% const show = shows[idx] %>
+                    <div class="index-boxes">
+                        <img class="thumbnail" src="<%= show.image %>" alt="" />
+                        <a href="/shows/<%=show.id%>">
+                            <p><%=show.name%></p>
+                        </a>
+                    </div>
+                    <% } %>
+            </div>
         </div>
     </main>
 </body>

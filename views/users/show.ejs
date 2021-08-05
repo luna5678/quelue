@@ -12,12 +12,12 @@
                 <p>DOB: <%= user.dob %></p>
                 <p>Email: <%= user.email %></p>
             </div>
-            <div>
-                <h2>Queue:</h2>
-                <div class="queue-container">
+            <article class="user-queue-index">
+                <h1 class="index-header">MY QUEUE</h1>
+                <div class="index-boxes-container">
                     <% for (let i = 0; i < user.showQueue.length; i++) { %>
                         <% const queue = user.showQueue[i] %>
-                        <div class="queue-box">
+                        <div class="index-boxes">
                         <a href="/shows/<%=queue._id%>">
                             <img class="thumbnail" src="<%=queue.image%>">
                             <p><%=queue.name%></p>
@@ -30,7 +30,7 @@
                         </div>
                     <%}%>
                 </div>
-            </div>
+                </article>
            <!--  <div>
                 <h2>Liked Episodes:</h2>
                 <div class="">
