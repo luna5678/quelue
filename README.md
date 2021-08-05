@@ -16,10 +16,19 @@ QUELUE
 
    TECHNOLOGIES USED
 
-        This application was created from scratch using Express/Node.js to build the basic server functionality. We are using MongoDB to hold our database, and Mongoose was used as the Object Data Modeling library for Node.js and MongoDB. Mongo
+        This application was created from scratch using Express/Node.js to build the basic server functionality. 
+        
+        We are using MongoDB to hold our database, and Mongoose was used as the Object Data Modeling library for Node.js and MongoDB. 
+        
+        Express-session is used to create cookies to store session id's for the user currently logged in. Connect-mongo stores the sessions when users log out. 
+        
+        We used dotenv to separate our secrets from our source code, and bcryptjs was used to hash and salt all passwords for security. 
+        
+        All pages are rendered dynamically with EJS, and method-override is used to provide the PUT and DELETE methods.
 
    APPROACH
-
+        
+        Quelue was built beginning with the server and models of the three Schema that organize all of our data: Users, Shows, and Episodes. Shows share a one-to-many relationship with Episodes, and Users share a many-to-many relationship with Shows.
 
    UNSOLVED PROBLEMS
 
