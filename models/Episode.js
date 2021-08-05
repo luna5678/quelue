@@ -10,12 +10,7 @@ const EpisodeSchema = new mongoose.Schema(
             type: Number,
             required: true
         },
-        likes: {
-            type: Number,
-            default: 0
-        },
         parentShow: {
-            // type: String,
             type: mongoose.Types.ObjectId,
             ref: 'Show',
         },
