@@ -17,6 +17,12 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
 #error-text {
   visibility: hidden;
 }
@@ -43,7 +49,7 @@ body {
   font-weight: bold;
   color: $secondary-color;
   display: grid;
-  grid-template-columns: 200px 1fr 250px;
+  grid-template-columns: 200px 1fr 300px;
   justify-items: center;
   align-items: center;
 
@@ -68,6 +74,8 @@ body {
 
   .nav-user-links {
     font-size: 16px;
+    display: flex;
+    align-items: baseline;
   }
 
   a {
@@ -78,12 +86,6 @@ body {
   a:hover {
     text-decoration: underline;
   }
-}
-
-main {
-  width: 80%;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .index-page {
@@ -157,11 +159,17 @@ main {
 
   h1 {
     color: $primary-color;
+    font-family: $heading-font-stack;
     font-weight: 400;
 
     a {
       text-decoration: none;
     }
+  }
+
+  h2 {
+    font-family: $heading-font-stack;
+    font-weight: 700;
   }
 
   .return-to-show-link {
@@ -191,6 +199,10 @@ main {
 .show-show-page-container {
   @extend .ep-show-page-container;
 
+  h1 {
+    font-weight: 700;
+  }
+
   .cta-button-green {
     border: none;
     background-color: $green-button-color;
@@ -210,38 +222,39 @@ main {
   font-style: italic;
 }
 
-// .show-show-ep-title {
-// }
 .episode-list-container {
   h2 {
     color: white;
     letter-spacing: 00.15em;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   .episode-list-grid {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 310px 1fr;
     align-content: center;
     height: 200px;
     width: 100%;
-    background-color: white;
   }
 
-  .episode-boxes {
-    justify-self: center;
+  .episode-img-boxes {
+    // justify-self: center;
     align-self: center;
     color: black;
+    padding-left: 30px;
   }
 
   .episode-info-boxes {
     justify-self: center;
     align-self: center;
-    padding-right: 40px;
+    padding: 10px 40px;
+    background-color: white;
+    // margin-right: 30px;
   }
 
   .thumbnail {
     width: 250px;
+    // height: 200px;
   }
 
   .episode-info-header {
@@ -252,11 +265,13 @@ main {
 
   .episode-info-link {
     color: black;
-    text-decoration: none;
+    font-weight: 400;
+    font-family: $heading-font-stack;
+    font-size: 14px;
   }
 
   .episode-info-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 

@@ -7,6 +7,12 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
 #error-text {
   visibility: hidden;
 }
@@ -33,7 +39,7 @@ body {
   font-weight: bold;
   color: #2f73a7;
   display: grid;
-  grid-template-columns: 200px 1fr 250px;
+  grid-template-columns: 200px 1fr 300px;
   justify-items: center;
   align-items: center;
 }
@@ -54,6 +60,8 @@ body {
 }
 #navbar .nav-user-links {
   font-size: 16px;
+  display: flex;
+  align-items: baseline;
 }
 #navbar a {
   text-decoration: none;
@@ -61,12 +69,6 @@ body {
 }
 #navbar a:hover {
   text-decoration: underline;
-}
-
-main {
-  width: 80%;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .index-page, .user-queue-index {
@@ -128,10 +130,15 @@ main {
 }
 .ep-show-page-container h1, .show-show-page-container h1 {
   color: #004e89;
+  font-family: "Nanum Gothic", sans-serif;
   font-weight: 400;
 }
 .ep-show-page-container h1 a, .show-show-page-container h1 a {
   text-decoration: none;
+}
+.ep-show-page-container h2, .show-show-page-container h2 {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 700;
 }
 .ep-show-page-container .return-to-show-link, .show-show-page-container .return-to-show-link {
   color: #ffa90a;
@@ -152,6 +159,9 @@ main {
   max-height: 300px;
 }
 
+.show-show-page-container h1 {
+  font-weight: 700;
+}
 .show-show-page-container .cta-button-green {
   border: none;
   background-color: #6da34d;
@@ -172,25 +182,25 @@ main {
 .episode-list-container h2 {
   color: white;
   letter-spacing: 0.15em;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .episode-list-container .episode-list-grid {
   display: grid;
-  grid-template-columns: 400px 1fr;
+  grid-template-columns: 310px 1fr;
   align-content: center;
   height: 200px;
   width: 100%;
-  background-color: white;
 }
-.episode-list-container .episode-boxes {
-  justify-self: center;
+.episode-list-container .episode-img-boxes {
   align-self: center;
   color: black;
+  padding-left: 30px;
 }
 .episode-list-container .episode-info-boxes {
   justify-self: center;
   align-self: center;
-  padding-right: 40px;
+  padding: 10px 40px;
+  background-color: white;
 }
 .episode-list-container .thumbnail {
   width: 250px;
@@ -202,10 +212,12 @@ main {
 }
 .episode-list-container .episode-info-link {
   color: black;
-  text-decoration: none;
+  font-weight: 400;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 14px;
 }
 .episode-list-container .episode-info-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #account-box {
