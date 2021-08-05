@@ -115,10 +115,14 @@ router.put('/:id', async (req, res) => {
             return res.redirect(`/${req.session.currentUser.id}/edit_password_error`);
         }
     
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(req.body.password, salt);
+
         const updatedUser = await User.findByIdAndUpdate(
         req.session.currentUser.id,
-        { $set: req.body }, { new: true }
+        { $set: { username: req.body.username, email: req.body.email, password: hash } }, { new: true }
     );
+    
     return res.redirect(`/users/${req.session.currentUser.id}`);
     } catch (error) {
         console.log(error);
