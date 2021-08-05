@@ -1,6 +1,7 @@
 $primary-color: #004e89;
 $secondary-color: #2f73a7;
 $warn-color: #ffa90a;
+$danger-color: #e84855;
 $button-color: #d4ece5;
 $green-button-color: #6da34d;
 $background-color: #999999;
@@ -33,10 +34,6 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
-// img {
-//   width: 600px;
-//   height: auto;
-// }
 
 #navbar {
   padding: 20px;
@@ -213,6 +210,8 @@ main {
   font-style: italic;
 }
 
+// .show-show-ep-title {
+// }
 .episode-list-container {
   h2 {
     color: white;
@@ -258,5 +257,113 @@ main {
 
   .episode-info-link:hover {
     text-decoration: underline;
+  }
+}
+
+#account-box {
+  width: 40%;
+  margin: 50px auto;
+  padding: 60px 50px;
+  background-color: white;
+
+  h3 {
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-family: $heading-font-stack;
+    text-align: center;
+  }
+
+  label {
+    color: $primary-color;
+  }
+
+  input {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: $background-color 2px solid;
+    padding-top: 10px;
+    font-family: $body-font-stack;
+    font-size: 16px;
+  }
+
+  input[type="date"] {
+    font-family: $body-font-stack;
+  }
+
+  .form-section {
+    padding: 20px 0;
+  }
+
+  .button-container {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    border: none;
+    background-color: $button-color;
+    color: $primary-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    align-items: center;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .register-login-redirect {
+    margin-top: 30px;
+  }
+
+  a {
+    color: $secondary-color;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .register-login-error {
+    color: $danger-color;
+    display: inline-block;
+    border: $danger-color 1px solid;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #edit-profile-button-container {
+    width: 180px;
+    margin: auto;
+  }
+
+  .submit-changes-button {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  #delete-button {
+    border: none;
+    background-color: $danger-color;
+    color: $primary-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    align-items: center;
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+  }
+
+  #delete-button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
   }
 }

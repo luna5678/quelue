@@ -5,41 +5,42 @@
     <body>
         <%- include('../partials/navbar/_navbar') %>
         <main>
-            <div id="acccount-box">
+            <div id="account-box">
                 <h3>Make changes to your account</h3>
                 <div class="account-form">
                     <form action="/<%= user.id %>?_method=PUT" method="POST"> 
-                        <div>
+                        <div class="form-section">
                             <label for="username">username</label>
                             <div class="input-field">
                                 <input type="text" name="username" id="username" value="<%= user.username %>" />
                             </div>
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="email">email</label>
                             <div class="input-field">
                                 <input type="email" name="email" id="email"
                                 value="<%= user.email %>" />
                             </div>
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="password">password</label>
                             <div class="input-field">
                                 <input type="password" name="password" id="password" />
                             </div>
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="passwordTwo">confirm password</label>
                             <div class="input-field">
                                 <input name="passwordTwo" type="password" id="passwordTwo" />
                             </div>
                         </div>
-                        <div>
-                            <button type="submit">Submit</button>
-                        </div>
+
+                        <div id="edit-profile-button-container">
+                            <button type="submit" class="submit-changes-button">Submit Changes</button>
+                        
                     </form>
                     <form action="/<%= user.id %>?_method=DELETE" method="POST">
-                        <button type="submit">Delete Profile</button>
+                        <button type="submit" id="delete-button">Delete Profile</button>
                     </form> 
                 </div>
             </div>
