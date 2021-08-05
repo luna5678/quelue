@@ -2,6 +2,9 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #000;
   background-color: #999999;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -13,24 +16,47 @@ img {
   width: 200px;
 }
 
-.navbar {
+#navbar {
+  padding: 20px;
+  margin: 0;
   background-color: #fff;
   font-family: "Nanum Gothic", sans-serif;
-}
-
-.navbar-item-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.navbar-item {
+  font-weight: bold;
   color: #2f73a7;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  justify-items: center;
+  align-items: center;
+}
+#navbar #logo {
+  color: #004e89;
+  font-family: "Montserrat", sans-serif;
   font-size: 30px;
+  font-weight: 700px;
+}
+#navbar .nav-main-links {
+  font-size: 22px;
+}
+#navbar .nav-main-padding {
+  padding-right: 60px;
+}
+#navbar .nav-user-padding {
+  padding-right: 20px;
+}
+#navbar .nav-user-links {
+  font-size: 16px;
+}
+#navbar a {
+  text-decoration: none;
+  color: #2f73a7;
+}
+#navbar a:hover {
+  text-decoration: underline;
 }
 
 .queue-container {
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
 }
 
