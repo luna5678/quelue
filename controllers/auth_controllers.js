@@ -10,7 +10,17 @@ router.get('/register', (req, res) => {
 
 // login GET
 router.get('/login', (req, res) => {
-    return res.render('auth/login')
+    return res.render('auth/login');
+});
+
+// registration password error GET
+router.get('/register_password_error', (req, res) => {
+    return res.render('auth/register_password_error');
+});
+
+// login password error GET
+router.get('/login_password_error', (req, res) => {
+    return res.render('auth/login_password_error');
 });
 
 // register POST
@@ -18,7 +28,7 @@ router.post('/register', async (req, res) => {
     try {
         
         if (req.body.password !== req.body.passwordTwo) {
-            return res.send('passwords do not match')
+            return res.redirect('/register_password_error');
         }
         
         const foundUser = await User.exists({ 
@@ -51,7 +61,7 @@ router.post('/login', async (req, res) => {
 
         const match = await bcrypt.compare(req.body.password, foundUser.password);
         if (!match)  { 
-            return res.send('password invalid');
+            return res.redirect('/login_password_error');
         }
 
         req.session.currentUser = {
@@ -76,6 +86,11 @@ router.get('/logout', async (req, res) => {
     }
 });
 
+// logout button - POST
+router.post('/logout', (req, res) => {
+    return res.redirect('/login');
+});
+
 // edit profile - GET
 router.get('/:id/edit', async (req, res) => {
     try {
@@ -91,19 +106,27 @@ router.get('/:id/edit', async (req, res) => {
     }
 });
 
+// edit profile password error - GET
+router.get('/:id/edit_password_error', (req, res) => {
+    return res.render('auth/edit_password_error.ejs');
+});
+
 // update profile - PUT
 router.put('/:id', async (req, res) => {
 
     try {
-        console.log('====this is working====');
         if (req.body.password !== req.body.passwordTwo) {
-            return res.send('passwords do not match')
+            return res.redirect(`/${req.session.currentUser.id}/edit_password_error`);
         }
     
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(req.body.password, salt);
+
         const updatedUser = await User.findByIdAndUpdate(
         req.session.currentUser.id,
-        { $set: req.body }, { new: true }
+        { $set: { username: req.body.username, email: req.body.email, password: hash } }, { new: true }
     );
+    
     return res.redirect(`/users/${req.session.currentUser.id}`);
     } catch (error) {
         console.log(error);

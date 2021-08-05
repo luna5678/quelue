@@ -11,10 +11,10 @@
                 <img src="<%= episode.image %>" alt="" />
                 <p><%=episode.description%></p>
                 <p>Runtime: <%=episode.runtime%> minutes</p>
-                <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-                    <input hidden name="name" value="<%= episode._id %>" />
+                <!-- <form action="/users/%= user.id %>?_method=PUT" method="POST">
+                    <input hidden name="name" value="%= episode._id %>" />
                     <button type="submit">Like this Episode</button>
-                </form>
+                </form> -->
             </div>
         </main>
     </body>

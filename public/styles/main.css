@@ -93,4 +93,8 @@ main {
   cursor: pointer;
 }
 
+#error-text {
+  visibility: hidden;
+}
+
 /*# sourceMappingURL=main.css.map */
