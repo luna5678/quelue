@@ -1,35 +1,124 @@
+$primary-color: #004e89;
+$secondary-color: #2f73a7;
+$warn-color: #ffa90a;
+$button-color: #d4ece5;
+$background-color: #999999;
+$body-font-stack: "Montserrat", sans-serif;
+$heading-font-stack: "Nanum Gothic", sans-serif;
+
 body {
   font-family: "Montserrat", sans-serif;
   color: #000;
-  background-color: #999999;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-img {
-  width: 600px;
-  height: auto;
-}
+// img {
+//   width: 600px;
+//   height: auto;
+// }
 
-.thumbnail {
-  width: 200px;
-}
-
-.navbar {
+#navbar {
+  padding: 20px;
+  margin: 0;
   background-color: #fff;
-  font-family: "Nanum Gothic", sans-serif;
-}
-
-.navbar-item-container {
+  font-family: $heading-font-stack;
+  font-weight: bold;
+  color: $secondary-color;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 200px 1fr 200px;
+  justify-items: center;
+  align-items: center;
+
+  #logo {
+    color: $primary-color;
+    font-family: $body-font-stack;
+    font-size: 30px;
+    font-weight: 700px;
+  }
+
+  .nav-main-links {
+    font-size: 22px;
+  }
+
+  .nav-main-padding {
+    padding-right: 60px;
+  }
+
+  .nav-user-padding {
+    padding-right: 20px;
+  }
+
+  .nav-user-links {
+    font-size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
-.navbar-item {
-  color: #2f73a7;
-  font-size: 30px;
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
 }
 
-.queue-container {
-  display: grid;
-  grid-template-columns: repeat(4, 200px);
-  grid-gap: 40px;
+.index-page {
+  color: white;
+
+  h1 {
+    letter-spacing: 0.15em;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .index-header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+
+  .index-boxes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    justify-items: center;
+  }
+
+  img {
+    width: 250px;
+  }
+}
+
+.user-queue-index {
+  @extend .index-page;
+
+  button {
+    border: none;
+    background-color: white;
+    color: $warn-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 }

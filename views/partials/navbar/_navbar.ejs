@@ -1,9 +1,19 @@
-<nav class="navbar">
-    <div class="navbar-item-container">
-        <p class="nav-brand">quelue</p>
-        <a class="nav-main" href="/shows">All Shows</a>
-        <a class="nav-user" href="/users/<%= user.id %>"><%= user.username %></a>
-        <a class="" href="/<%= user.id %>/edit">Edit Profile</a>
-        <!-- <a class="navbar-item" href="/users/< %= user._id %>">Homepage</a> -->
+<nav id="navbar">
+    <div id="logo">quelue</div>
+
+    <div class="nav-main-links">
+        <span class="nav-main-padding">
+        <a class="nav-main" href="/users/<%= user.id %>">HOME</a></span>
+        <a class="nav-main" href="/shows">ALL SHOWS</a>
     </div>
+
+    <div class="nav-user-links">
+        <span class="nav-user-padding">
+        <a href="/users/<%= user.id %>">
+            <%= user.username %></a>
+            </span>
+        <a href="/<%= user.id %>/edit">Edit Profile</a>
+    </div>
+
+    <!-- <a class="navbar-item" href="/users/< %= user._id %>">Homepage</a> -->
 </nav>
