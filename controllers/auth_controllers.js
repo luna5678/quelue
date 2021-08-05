@@ -23,9 +23,7 @@ router.post('/register', async (req, res) => {
     try {
         
         if (req.body.password !== req.body.passwordTwo) {
-            // toggle text that alerts user to password not matching
-            // const errorText = req.body.error_text;
-            // errorText.classList.toggle('visibility');
+        
             return res.redirect('/register_password_error');
         }
         
@@ -101,16 +99,15 @@ router.get('/:id/edit', async (req, res) => {
 
 // edit profile password error - GET
 router.get('/:id/edit_password_error', (req, res) => {
-    return res.render('/auth/edit_password_error');
+    return res.render('auth/edit_password_error.ejs');
 });
 
 // update profile - PUT
 router.put('/:id', async (req, res) => {
 
     try {
-        
         if (req.body.password !== req.body.passwordTwo) {
-            return res.send('passwords do not match')
+            return res.redirect(`/${req.session.currentUser.id}/edit_password_error`);
         }
     
         const updatedUser = await User.findByIdAndUpdate(
