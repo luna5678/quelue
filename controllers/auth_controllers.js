@@ -99,6 +99,11 @@ router.get('/:id/edit', async (req, res) => {
     }
 });
 
+// edit profile password error - GET
+router.get('/:id/edit_password_error', (req, res) => {
+    
+})
+
 // update profile - PUT
 router.put('/:id', async (req, res) => {
 
