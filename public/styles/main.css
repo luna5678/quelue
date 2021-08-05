@@ -218,6 +218,7 @@ main {
   padding: 0 0 10px 0;
   margin: 0;
   font-family: "Nanum Gothic", sans-serif;
+  text-align: center;
 }
 #account-box label {
   color: #004e89;
