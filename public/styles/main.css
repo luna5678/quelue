@@ -148,6 +148,9 @@ main {
 .ep-show-page-container .show-page-container-right, .show-show-page-container .show-page-container-right {
   padding: 20px 40px 20px 20px;
 }
+.ep-show-page-container .show-page-container-right img, .show-show-page-container .show-page-container-right img {
+  max-height: 300px;
+}
 
 .show-show-page-container .cta-button-green {
   border: none;

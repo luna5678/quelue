@@ -185,6 +185,9 @@ main {
 
   .show-page-container-right {
     padding: 20px 40px 20px 20px;
+    img {
+      max-height: 300px;
+    }
   }
 }
 
