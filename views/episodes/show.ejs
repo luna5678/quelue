@@ -5,12 +5,24 @@
     <body>
         <%- include('../partials/navbar/_navbar') %>
         <main>
-            <div>
-                <a href="/shows/<%=episode.parentShow._id%>"><h1><%=episode.parentShow.name%></h1></a>
-                <h2><%=episode.name%></h2>
-                <img src="<%= episode.image %>" alt="" />
-                <p><%=episode.description%></p>
-                <p>Runtime: <%=episode.runtime%> minutes</p>
+            <div class="ep-show-page-container">
+                <div class="show-page-container-left">
+                    <a href="/shows/<%=episode.parentShow._id%>" class="show-page-header-link">
+                        <h1><%=episode.parentShow.name%></h1>
+                    </a>
+                    <h2>
+                        <%=episode.name%>
+                    </h2>
+                    <p>
+                        <%=episode.description%>
+                    </p>
+                    <p class="episode-runtime">Runtime: <%=episode.runtime%> minutes</p>
+                    <p><a href="/shows/<%=episode.parentShow._id%>" class="return-to-show-link">Return to all episodes</a> </p>
+                </div>
+                
+                <div class="show-page-container-right">
+                    <img src="<%= episode.image %>" alt="" />
+                </div>
                 <!-- <form action="/users/%= user.id %>?_method=PUT" method="POST">
                     <input hidden name="name" value="%= episode._id %>" />
                     <button type="submit">Like this Episode</button>
