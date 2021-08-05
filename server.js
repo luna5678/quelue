@@ -60,6 +60,13 @@ const authRequired = (req, res, next) => {
     next();
 }
 
+app.get('/', (req, res) => {
+    if (!req.session.currentUser) {
+        return res.redirect('/login');
+    }
+    return res.redirect(`/users/${req.session.currentUser.id}`);
+});
+
 /* === Routes === */
 app.use('/', controllers.auth);
 app.use('/users', authRequired, controllers.user);
