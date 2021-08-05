@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Edit Profile' }) %>
+
+<body>
+
+    <%- include('../partials/navbar/_navbar') %>
+
+    <main>
+
+        <div id="account-box">
+            <h3>Make changes to your account</h3>
+
+            <!-- EDIT ACCOUNT FORM -->
+            <div class="account-form">
+
+                <form action="/<%= user.id %>?_method=PUT" method="POST"> 
+
+                    <div class="form-section">
+                        <label for="username">username</label>
+                        <div class="input-field">
+                            <input type="text" name="username" id="username" value="<%= user.username %>" />
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label for="email">email</label>
+                        <div class="input-field">
+                            <input type="email" name="email" id="email"
+                            value="<%= user.email %>" />
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label for="password">password</label>
+                        <div class="input-field">
+                            <input type="password" name="password" id="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <label for="passwordTwo">confirm password</label>
+                        <div class="input-field">
+                            <input name="passwordTwo" type="password" id="passwordTwo" />
+                        </div>
+                    </div>
+
+                    <div id="edit-profile-button-container">
+                        <button type="submit" class="submit-changes-button">Submit Changes</button>
+                    
+                </form>
+
+                <!-- DELETE ACCOUNT BUTTON -->
+                <form action="/<%= user.id %>?_method=DELETE" method="POST">
+                    <button type="submit" id="delete-button">Delete Account</button>
+                </form> 
+
+            </div>
+            
+        </div>
+        
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Episodes' }) %>
+
+    <body>
+        <%- include('../partials/navbar/_navbar') %>
+        <main>
+            <div>
+                <% for (let idx=0; idx < episodes.length; idx++) { %>
+                    <% const episode=episodes[idx] %>
+                        <img src="<%= episode.image %>" alt="" />
+                        <h2><%=episode.name%></h2>
+                        <p><%=episode.description%></p>
+                        <% } %>
+            </div>
+        </main>
+    </body>
+
+</html>

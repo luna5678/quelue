@@ -1,0 +1,315 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  background-color: #999999;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#error-text {
+  visibility: hidden;
+}
+
+.logout-button {
+  border: none;
+  background-color: white;
+  color: #2f73a7;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  height: 15px;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#navbar {
+  padding: 20px;
+  margin: 0;
+  background-color: #fff;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  color: #2f73a7;
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  justify-items: center;
+  align-items: center;
+}
+#navbar #logo {
+  color: #004e89;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 700px;
+}
+#navbar .nav-main-links {
+  font-size: 22px;
+}
+#navbar .nav-main-padding {
+  padding-right: 60px;
+}
+#navbar .nav-user-padding {
+  padding-right: 20px;
+}
+#navbar .nav-user-links {
+  font-size: 16px;
+  display: flex;
+  align-items: baseline;
+}
+#navbar a {
+  text-decoration: none;
+  color: #2f73a7;
+}
+#navbar a:hover {
+  text-decoration: underline;
+}
+
+.index-page, .user-queue-index {
+  color: white;
+}
+.index-page h1, .user-queue-index h1 {
+  letter-spacing: 0.15em;
+}
+.index-page a, .user-queue-index a {
+  color: white;
+  text-decoration: none;
+}
+.index-page a:hover, .user-queue-index a:hover {
+  text-decoration: underline;
+}
+.index-page .index-header, .user-queue-index .index-header {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+.index-page .index-boxes-container, .user-queue-index .index-boxes-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  justify-items: center;
+}
+.index-page img, .user-queue-index img {
+  width: 250px;
+}
+
+.user-queue-index button {
+  border: none;
+  background-color: white;
+  color: #ffa90a;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.user-queue-index button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.ep-show-page-container, .show-show-page-container {
+  margin-top: 40px;
+  height: 380px;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 40px;
+}
+.ep-show-page-container .show-page-header-link, .show-show-page-container .show-page-header-link {
+  text-decoration: none;
+  color: #004e89;
+}
+.ep-show-page-container .show-page-header-link:hover, .show-show-page-container .show-page-header-link:hover {
+  text-decoration: underline;
+}
+.ep-show-page-container h1, .show-show-page-container h1 {
+  color: #004e89;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+}
+.ep-show-page-container h1 a, .show-show-page-container h1 a {
+  text-decoration: none;
+}
+.ep-show-page-container h2, .show-show-page-container h2 {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 700;
+}
+.ep-show-page-container .return-to-show-link, .show-show-page-container .return-to-show-link {
+  color: #ffa90a;
+}
+.ep-show-page-container .return-to-show-link:hover, .show-show-page-container .return-to-show-link:hover {
+  text-decoration: none;
+}
+.ep-show-page-container img, .show-show-page-container img {
+  width: 500px;
+}
+.ep-show-page-container .show-page-container-left, .show-show-page-container .show-page-container-left {
+  padding: 20px 20px 20px 40px;
+}
+.ep-show-page-container .show-page-container-right, .show-show-page-container .show-page-container-right {
+  padding: 20px 40px 20px 20px;
+}
+.ep-show-page-container .show-page-container-right img, .show-show-page-container .show-page-container-right img {
+  max-height: 300px;
+}
+
+.show-show-page-container h1 {
+  font-weight: 700;
+}
+.show-show-page-container .cta-button-green {
+  border: none;
+  background-color: #6da34d;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.show-show-page-container .cta-button-green:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.episode-runtime {
+  font-style: italic;
+}
+
+.episode-list-container h2 {
+  color: white;
+  letter-spacing: 0.15em;
+  margin-top: 50px;
+}
+.episode-list-container .episode-list-grid {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  align-content: center;
+  height: 200px;
+  width: 100%;
+}
+.episode-list-container .episode-img-boxes {
+  align-self: center;
+  color: black;
+  padding-left: 30px;
+}
+.episode-list-container .episode-info-boxes {
+  justify-self: center;
+  align-self: center;
+  padding: 10px 40px;
+  background-color: white;
+}
+.episode-list-container .thumbnail {
+  width: 250px;
+}
+.episode-list-container .episode-info-header {
+  color: black;
+  padding: auto;
+  margin: 0;
+}
+.episode-list-container .episode-info-link {
+  color: black;
+  font-weight: 400;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 14px;
+}
+.episode-list-container .episode-info-link:hover {
+  text-decoration: none;
+}
+
+#account-box {
+  width: 40%;
+  margin: 50px auto;
+  padding: 60px 50px;
+  background-color: white;
+}
+#account-box h3 {
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-family: "Nanum Gothic", sans-serif;
+  text-align: center;
+}
+#account-box label {
+  color: #004e89;
+}
+#account-box input {
+  width: 100%;
+  height: 20px;
+  border: none;
+  border-bottom: #999999 2px solid;
+  padding-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+#account-box input[type=date] {
+  font-family: "Montserrat", sans-serif;
+}
+#account-box .form-section {
+  padding: 20px 0;
+}
+#account-box .button-container {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+#account-box button {
+  border: none;
+  background-color: #d4ece5;
+  color: #004e89;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  align-items: center;
+}
+#account-box button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+#account-box .register-login-redirect {
+  margin-top: 30px;
+}
+#account-box a {
+  color: #2f73a7;
+}
+#account-box a:hover {
+  text-decoration: none;
+}
+#account-box .register-login-error {
+  color: #e84855;
+  display: inline-block;
+  border: #e84855 1px solid;
+  padding: 10px;
+  text-align: center;
+}
+#account-box #edit-profile-button-container {
+  width: 200px;
+  margin: auto;
+}
+#account-box .submit-changes-button {
+  width: 100%;
+  margin: 20px 0;
+}
+#account-box #delete-button {
+  border: none;
+  background-color: #e84855;
+  color: #004e89;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  align-items: center;
+  width: 100%;
+  color: white;
+  margin-top: 10px;
+}
+#account-box #delete-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

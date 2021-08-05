@@ -1,0 +1,384 @@
+$primary-color: #004e89;
+$secondary-color: #2f73a7;
+$warn-color: #ffa90a;
+$danger-color: #e84855;
+$button-color: #d4ece5;
+$green-button-color: #6da34d;
+$background-color: #999999;
+$body-font-stack: "Montserrat", sans-serif;
+$heading-font-stack: "Nanum Gothic", sans-serif;
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #000;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#error-text {
+  visibility: hidden;
+}
+
+.logout-button {
+  border: none;
+  background-color: white;
+  color: $secondary-color;
+  font-size: 16px;
+  font-family: $body-font-stack;
+  height: 15px;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#navbar {
+  padding: 20px;
+  margin: 0;
+  background-color: #fff;
+  font-family: $heading-font-stack;
+  font-weight: bold;
+  color: $secondary-color;
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  justify-items: center;
+  align-items: center;
+
+  #logo {
+    color: $primary-color;
+    font-family: $body-font-stack;
+    font-size: 30px;
+    font-weight: 700px;
+  }
+
+  .nav-main-links {
+    font-size: 22px;
+  }
+
+  .nav-main-padding {
+    padding-right: 60px;
+  }
+
+  .nav-user-padding {
+    padding-right: 20px;
+  }
+
+  .nav-user-links {
+    font-size: 16px;
+    display: flex;
+    align-items: baseline;
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.index-page {
+  color: white;
+
+  h1 {
+    letter-spacing: 0.15em;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .index-header {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 28px;
+  }
+
+  .index-boxes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    justify-items: center;
+  }
+
+  img {
+    width: 250px;
+  }
+}
+
+.user-queue-index {
+  @extend .index-page;
+
+  button {
+    border: none;
+    background-color: white;
+    color: $warn-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+.ep-show-page-container {
+  margin-top: 40px;
+  height: 380px;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 40px;
+
+  .show-page-header-link {
+    text-decoration: none;
+    color: $primary-color;
+  }
+
+  .show-page-header-link:hover {
+    text-decoration: underline;
+  }
+
+  h1 {
+    color: $primary-color;
+    font-family: $heading-font-stack;
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  h2 {
+    font-family: $heading-font-stack;
+    font-weight: 700;
+  }
+
+  .return-to-show-link {
+    color: $warn-color;
+  }
+
+  .return-to-show-link:hover {
+    text-decoration: none;
+  }
+
+  img {
+    width: 500px;
+  }
+
+  .show-page-container-left {
+    padding: 20px 20px 20px 40px;
+  }
+
+  .show-page-container-right {
+    padding: 20px 40px 20px 20px;
+    img {
+      max-height: 300px;
+    }
+  }
+}
+
+.show-show-page-container {
+  @extend .ep-show-page-container;
+
+  h1 {
+    font-weight: 700;
+  }
+
+  .cta-button-green {
+    border: none;
+    background-color: $green-button-color;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .cta-button-green:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+.episode-runtime {
+  font-style: italic;
+}
+
+.episode-list-container {
+  h2 {
+    color: white;
+    letter-spacing: 00.15em;
+    margin-top: 50px;
+  }
+
+  .episode-list-grid {
+    display: grid;
+    grid-template-columns: 310px 1fr;
+    align-content: center;
+    height: 200px;
+    width: 100%;
+  }
+
+  .episode-img-boxes {
+    // justify-self: center;
+    align-self: center;
+    color: black;
+    padding-left: 30px;
+  }
+
+  .episode-info-boxes {
+    justify-self: center;
+    align-self: center;
+    padding: 10px 40px;
+    background-color: white;
+    // margin-right: 30px;
+  }
+
+  .thumbnail {
+    width: 250px;
+    // height: 200px;
+  }
+
+  .episode-info-header {
+    color: black;
+    padding: auto;
+    margin: 0;
+  }
+
+  .episode-info-link {
+    color: black;
+    font-weight: 400;
+    font-family: $heading-font-stack;
+    font-size: 14px;
+  }
+
+  .episode-info-link:hover {
+    text-decoration: none;
+  }
+}
+
+#account-box {
+  width: 40%;
+  margin: 50px auto;
+  padding: 60px 50px;
+  background-color: white;
+
+  h3 {
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-family: $heading-font-stack;
+    text-align: center;
+  }
+
+  label {
+    color: $primary-color;
+  }
+
+  input {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: $background-color 2px solid;
+    padding-top: 10px;
+    font-family: $body-font-stack;
+    font-size: 16px;
+  }
+
+  input[type="date"] {
+    font-family: $body-font-stack;
+  }
+
+  .form-section {
+    padding: 20px 0;
+  }
+
+  .button-container {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    border: none;
+    background-color: $button-color;
+    color: $primary-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    align-items: center;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .register-login-redirect {
+    margin-top: 30px;
+  }
+
+  a {
+    color: $secondary-color;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .register-login-error {
+    color: $danger-color;
+    display: inline-block;
+    border: $danger-color 1px solid;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #edit-profile-button-container {
+    width: 200px;
+    margin: auto;
+  }
+
+  .submit-changes-button {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  #delete-button {
+    border: none;
+    background-color: $danger-color;
+    color: $primary-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    align-items: center;
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+  }
+
+  #delete-button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+<nav id="navbar">
+    <div id="logo">quelue</div>
+
+    <div class="nav-main-links">
+        <span class="nav-main-padding">
+        <a class="nav-main" href="/users/<%= user.id %>">HOME</a></span>
+        <a class="nav-main" href="/shows">ALL SHOWS</a>
+    </div>
+    <div class="nav-user-links">
+        <span class="nav-user-padding">
+            <p><%= user.username %></p>
+            </span>
+        <span class="nav-user-padding">
+            <a href="/<%= user.id %>/edit">Edit Profile</a>
+        </span>
+        <span>
+        <form action="/logout" method="GET">
+                <button class="logout-button" type="submit">Logout</button>
+        </form>
+        </span>
+    </div>
+</nav>

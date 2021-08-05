@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head/_head', { page: 'Shows' }) %> 
+<body>
+    <!-- NAV PARTIAL -->
+    <%- include('../partials/navbar/_navbar') %>
+    <main>
+
+        <div class="index-page">
+            <h1 class="index-header">DISCOVER TV SHOWS</h1>
+
+            <!-- LOOP TO DISPLAY ALL SHOWS -->
+            <div class="index-boxes-container">
+                    <% for (let idx = 0; idx < shows.length; idx++) { %> <% const show = shows[idx] %>
+                    <div class="index-boxes">
+                       <a href="/shows/<%= show.id %>">
+                            <img class="thumbnail" src="<%= show.image %>" alt="" />
+                            <p><%=show.name%></p>
+                        </a>
+                    </div>
+                    <% } %>
+            </div>
+            
+        </div>
+    </main>
+</body>
+</html>
