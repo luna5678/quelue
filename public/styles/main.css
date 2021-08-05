@@ -110,4 +110,47 @@ main {
   cursor: pointer;
 }
 
+.show-page-container {
+  margin-top: 40px;
+  height: 380px;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 40px;
+}
+.show-page-container .show-page-header-link {
+  text-decoration: none;
+  color: #004e89;
+}
+.show-page-container .show-page-header-link:hover {
+  text-decoration: underline;
+}
+.show-page-container h1 {
+  color: #004e89;
+  font-weight: 400;
+}
+.show-page-container h1 a {
+  text-decoration: none;
+}
+.show-page-container .return-to-show-link {
+  color: #ffa90a;
+}
+.show-page-container .return-to-show-link:hover {
+  text-decoration: none;
+}
+.show-page-container img {
+  width: 500px;
+}
+.show-page-container .show-page-container-left {
+  padding: 20px 20px 20px 40px;
+}
+.show-page-container .show-page-container-right {
+  padding: 20px 40px 20px 20px;
+}
+
+.episode-runtime {
+  font-style: italic;
+}
+
 /*# sourceMappingURL=main.css.map */

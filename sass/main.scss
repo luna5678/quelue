@@ -138,3 +138,55 @@ main {
     cursor: pointer;
   }
 }
+
+.show-page-container {
+  margin-top: 40px;
+  height: 380px;
+  width: 100%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 40px;
+
+  .show-page-header-link {
+    text-decoration: none;
+    color: $primary-color;
+  }
+
+  .show-page-header-link:hover {
+    text-decoration: underline;
+  }
+
+  h1 {
+    color: $primary-color;
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .return-to-show-link {
+    color: $warn-color;
+  }
+
+  .return-to-show-link:hover {
+    text-decoration: none;
+  }
+
+  img {
+    width: 500px;
+  }
+
+  .show-page-container-left {
+    padding: 20px 20px 20px 40px;
+  }
+
+  .show-page-container-right {
+    padding: 20px 40px 20px 20px;
+  }
+}
+
+.episode-runtime {
+  font-style: italic;
+}
