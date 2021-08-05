@@ -7,15 +7,6 @@ body {
   box-sizing: border-box;
 }
 
-img {
-  width: 600px;
-  height: auto;
-}
-
-.thumbnail {
-  width: 200px;
-}
-
 #navbar {
   padding: 20px;
   margin: 0;
@@ -54,10 +45,48 @@ img {
   text-decoration: underline;
 }
 
-.queue-container {
+main {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.index-page, .user-queue-index {
+  color: white;
+}
+.index-page a, .user-queue-index a {
+  color: white;
+  text-decoration: none;
+}
+.index-page a:hover, .user-queue-index a:hover {
+  text-decoration: underline;
+}
+.index-page .index-header, .user-queue-index .index-header {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.index-page .index-boxes-container, .user-queue-index .index-boxes-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
+  justify-items: center;
+}
+.index-page img, .user-queue-index img {
+  width: 250px;
+}
+
+.user-queue-index button {
+  border: none;
+  background-color: white;
+  color: #ffa90a;
+  padding: 10px 15px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.user-queue-index button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */
