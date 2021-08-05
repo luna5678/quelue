@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const functions = require('../public/scripts/app');
 const { User, Show, Episode } = require('../models');
 
 // register GET
