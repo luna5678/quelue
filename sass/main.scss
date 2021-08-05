@@ -335,4 +335,33 @@ main {
     padding: 10px;
     text-align: center;
   }
+
+  #edit-profile-button-container {
+    width: 180px;
+    margin: auto;
+  }
+
+  .submit-changes-button {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  #delete-button {
+    border: none;
+    background-color: $danger-color;
+    color: $primary-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    align-items: center;
+    width: 100%;
+    color: white;
+    margin-top: 10px;
+  }
+
+  #delete-button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 }
