@@ -6,6 +6,10 @@ $background-color: #999999;
 $body-font-stack: "Montserrat", sans-serif;
 $heading-font-stack: "Nanum Gothic", sans-serif;
 
+h1 {
+  letter-spacing: 0.15em;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   color: #000;
@@ -18,10 +22,6 @@ body {
 // img {
 //   width: 600px;
 //   height: auto;
-// }
-
-// .thumbnail {
-//   width: 200px;
 // }
 
 #navbar {
@@ -90,6 +90,7 @@ main {
   .index-header {
     margin-top: 50px;
     margin-bottom: 30px;
+    font-size: 28px;
   }
 
   .index-boxes-container {

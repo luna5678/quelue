@@ -1,3 +1,7 @@
+h1 {
+  letter-spacing: 0.15em;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   color: #000;
@@ -64,6 +68,7 @@ main {
 .index-page .index-header, .user-queue-index .index-header {
   margin-top: 50px;
   margin-bottom: 30px;
+  font-size: 28px;
 }
 .index-page .index-boxes-container, .user-queue-index .index-boxes-container {
   display: grid;
