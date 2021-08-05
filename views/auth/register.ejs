@@ -3,13 +3,18 @@
 <%- include('../partials/head/_head', { page: 'Register' }) %>
 
     <body>
+
+        <nav id="navbar">
+            <div id="logo">quelue</div>
+        </nav>
+
         <main>
-            <div id="acccount-box">
+            <div id="account-box">
                 <h3>Watch your favorite TV shows for free</h3>
                 <h3>Register for an account today!</h3>
                 <div class="account-form">
                     <form action="/register" method="POST">
-                        <div>
+                        <div class="form-section">
                             <label for="username">username</label>
                             <div class="input-field">
                                 <input 
@@ -18,7 +23,7 @@
                                 />
                             </div>
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="email">email</label>
                             <div class="input-field">
                                 <input 
@@ -27,7 +32,7 @@
                                 />
                             </div>
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="dob">birthdate</label>
                             <div class="input-field">
                                 <input 
@@ -36,7 +41,7 @@
                                 />
                             </div>  
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="password">password</label>
                             <div class="input-field">
                                 <input type="password"
@@ -44,20 +49,20 @@
                                 />
                             </div>
                         </div>
-                        <div>
+                        <div class="form-section">
                             <label for="passwordTwo">confirm password</label>
                             <div class="input-field">
                                 <input
                                 name="passwordTwo" type="password" id="passwordTwo" />
                             </div>
                         </div>
-                        <div>
+                        <div class="button-container">
                             <button>Submit</button>
                         </div>
                     </form>
                 </div>
 
-                <div>
+                <div class="register-login-redirect">
                     <a href="/login">Already have an account? Log in.</a>
                 </div>
 

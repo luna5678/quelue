@@ -260,3 +260,73 @@ main {
     text-decoration: underline;
   }
 }
+
+#account-box {
+  width: 40%;
+  margin: 50px auto;
+  padding: 60px 50px;
+  background-color: white;
+
+  h3 {
+    padding: 0 0 10px 0;
+    margin: 0;
+    font-family: $heading-font-stack;
+  }
+
+  label {
+    color: $primary-color;
+  }
+
+  input {
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: $background-color 2px solid;
+    padding-top: 10px;
+    font-family: $body-font-stack;
+    font-size: 16px;
+  }
+
+  input[type="date"] {
+    font-family: $body-font-stack;
+  }
+
+  .form-section {
+    padding: 20px 0;
+  }
+
+  .button-container {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    border: none;
+    background-color: $button-color;
+    color: $primary-color;
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    align-items: center;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .register-login-redirect {
+    margin-top: 30px;
+  }
+
+  a {
+    color: $secondary-color;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
