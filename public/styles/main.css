@@ -266,5 +266,12 @@ main {
 #account-box a:hover {
   text-decoration: none;
 }
+#account-box .register-login-error {
+  color: #e84855;
+  display: inline-block;
+  border: #e84855 1px solid;
+  padding: 10px;
+  text-align: center;
+}
 
 /*# sourceMappingURL=main.css.map */

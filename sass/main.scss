@@ -1,6 +1,7 @@
 $primary-color: #004e89;
 $secondary-color: #2f73a7;
 $warn-color: #ffa90a;
+$danger-color: #e84855;
 $button-color: #d4ece5;
 $green-button-color: #6da34d;
 $background-color: #999999;
@@ -33,10 +34,6 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
-// img {
-//   width: 600px;
-//   height: auto;
-// }
 
 #navbar {
   padding: 20px;
@@ -328,5 +325,13 @@ main {
 
   a:hover {
     text-decoration: none;
+  }
+
+  .register-login-error {
+    color: $danger-color;
+    display: inline-block;
+    border: $danger-color 1px solid;
+    padding: 10px;
+    text-align: center;
   }
 }
