@@ -6,10 +6,6 @@ $background-color: #999999;
 $body-font-stack: "Montserrat", sans-serif;
 $heading-font-stack: "Nanum Gothic", sans-serif;
 
-h1 {
-  letter-spacing: 0.15em;
-}
-
 body {
   font-family: "Montserrat", sans-serif;
   color: #000;
@@ -78,6 +74,9 @@ main {
 .index-page {
   color: white;
 
+  h1 {
+    letter-spacing: 0.15em;
+  }
   a {
     color: white;
     text-decoration: none;
