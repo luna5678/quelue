@@ -10,14 +10,17 @@
 
 <h2>Technologies Used</h2>
 
-<p>This application was created from scratch using Express/Node.js to build the basic server functionality. </p>
-<p>Model View Controller (MVC) framework to organize our code into a scalable and extensible application.</p>
-<p>Representation State Transfer (REST) routing style to map the HTTP routes and Create, Read, Update, and Delete (CRUD) functionalities.</p>
-<p>MongoDB to hold our database, and Mongoose was used as the Object Data Modeling library for Node.js and MongoDB. </p>
-<p>Express-session is used to create cookies to store session id's for the user currently logged in. Connect-mongo stores the sessions when users log out. </p>
-<p>dotenv to separate our secrets from our source code, and bcryptjs was used to hash and salt all passwords for security. </p>
-<p>All pages are rendered dynamically with EJS, and method-override is used to provide the PUT and DELETE methods. </p>
-<p>Sass preprocessor scripting language to compile Cascading Style Sheets.</p>
+<ul>
+
+</ul>
+<li>This application was created from scratch using Express/Node.js to build the basic server functionality. </li>
+<li>Model View Controller (MVC) framework to organize our code into a scalable and extensible application.</li>
+<li>Representation State Transfer (REST) routing style to map the HTTP routes and Create, Read, Update, and Delete (CRUD) functionalities.</li>
+<li>MongoDB to hold our database, and Mongoose was used as the Object Data Modeling library for Node.js and MongoDB. </li>
+<li>Express-session is used to create cookies to store session id's for the user currently logged in. Connect-mongo stores the sessions when users log out. </li>
+<li>dotenv to separate our secrets from our source code, and bcryptjs was used to hash and salt all passwords for security. </li>
+<li>All pages are rendered dynamically with EJS, and method-override is used to provide the PUT and DELETE methods. </li>
+<li>Sass preprocessor scripting language to compile Cascading Style Sheets.</li>
 
 <h2>Approach</h2>
         
@@ -31,7 +34,7 @@
 <a href="https://app.moqups.com/F5C4yNrilp/view/page/af4dcfefd">Wire-Frames</a>
 
 
-<h2>For next iteration...</h2>
+<h2>For the next iteration...</h2>
 
 <ul>
    <li>Originally, we conceived a system where episodes could be 'liked' and added to a user's list of 'liked' items on their homepage. Each episode would also track the total likes from all users. With the time alotted, we were unable to track the likes without interfering with the show's queue system, so we left it out of the final project. </li>
